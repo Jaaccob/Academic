@@ -1,0 +1,24 @@
+Znaleźć numery działów, w których średnia pensja jest wyższa niż średnia pensja w dziale  o numerze 30, sortując dane rosnąco.
+
+SELECT DEPTNO FROM EMP HAVING AVG(SAL) > (SELECT AVG(SAL) FROM EMP WHERE DEPTNO = 30) GROUP BY DEPTNO ORDER BY DEPTNO;
+
+Wybrać numery identyfikacyjne, nazwiska, stanowiska, pensje i numer działu pracowników zatrudnionych  w dziale, którego nazwa będzie wybierana przez użytkownika, wykonującego zapytanie. Umożliwić podawanie nazwy działu także małymi literami i posortować dane malejąco według pensji.
+
+SELECT EMPNO, ENAME, JOB, SAL, DEPTNO FROM EMP WHERE JOB = UPPER('&SELECTED_JOB') ORDER BY SAL DESC;
+
+Utworzyć tabelę STANOWISKA, która ma być kopią kolumn deptno i job tabeli EMP wraz z danymi , w których należy wyeliminować powtarzanie się identycznych wierszy, przy czym odpowiednie nazwy kolumn w nowej tabeli to: nr_dzialu i stanowisko, a nr_dzialu musi posiadać własność NOT NULL. Następnie utworzyć klucz obcy FK_nr_dzialu_s w nowej tabeli, który zawiera jeden atrybut nr_dzialu i odwołuje się do atrybutu deptno z tabeli DEPT
+
+ALTER TABLE STANOWISKA
+  2  ADD CONSTRAINT FK_NR_DZIALU_S FOREIGN KEY
+  3  (NR_DZIALU) REFERENCES DEPT(DEPTNO);
+
+
+
+Znaleźć numer i nazwisko pracowników oraz numer i nazwę działów, w których pracują, wyświetlając także informacje o pracownikach, którzy nie są zatrudnieni w żadnym dziale oraz o działach, w których nikt nie jest zatrudniony. W zapytaniu należy wykorzystać tabele EMP i WYDZIALY.
+
+SELECT EMPNO, ENAME, DEPTNO, NAZWA FROM EMP FULL JOIN WYDZIALY ON NR_DZIALU = DEPTNO;
+
+
+Znaleźć nazwy własne i typy więzów integralności w schemacie bieżącego użytkownika. Sprawdzić, na jakie kolumny zostały te więzy narzucone.
+
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME, COLUMN_NAME FROM USER_CONS_COLUMNS NATURAL JOIN USER_CONSTRAINTS;

@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FD341B92-FC48-7840-8804-33B39C44E319" name="COMMENTMOVIE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela przechowuje połączenie między komentarzami  użytkowników a filmami]]></comment>
+<generatorID>20706C36-CC16-2A20-998F-90DF5FD56818</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<ordsAlias>commentmove</ordsAlias>
+<abbreviation>commentmovie</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MOVIE_id" id="6B592B5A-E651-5197-842A-8CFF5D11A8F9">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>A1795FFB-8C8F-9110-1C74-549B86D21964</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6A4F5603-6F2B-43D1-2F5A-5220BDDA537F" referredColumn="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</associations>
+</Column>
+<Column name="USER_idUser" id="1CF58715-9722-AEA5-E6DC-5D6DB56BF4D9">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>B120E475-6E8F-A4FA-E0AE-2361A5EE0C00</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="32749545-9D92-9169-8FCC-3C158CC49E90" referredColumn="B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5"/>
+</associations>
+</Column>
+<Column name="COMMENT_id" id="D090B9C9-9527-2082-9EFB-601A3150BA02">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>237DCE4F-9A3A-F2A8-89F5-C37A5D059E95</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="59D115F6-9FF2-C57D-A4C8-807F226AF2CC" referredColumn="93DA0B87-6FA7-0F5A-5A4F-73CF0538EC84"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="94FB8C00-2CB3-27D4-2B57-8B00BB7875C5" name="COMMENTMOVIE_COMMENT_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:35:20 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D090B9C9-9527-2082-9EFB-601A3150BA02"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3FAF607E-0587-DB4A-319A-3E7538117BF8" name="COMMENTMOVIE_USER_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:35:20 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1CF58715-9722-AEA5-E6DC-5D6DB56BF4D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3430FF1A-6057-D880-AC8D-D09FFD8273CA" name="COMMENTMOVIE_MOVIE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:40:04 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6B592B5A-E651-5197-842A-8CFF5D11A8F9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

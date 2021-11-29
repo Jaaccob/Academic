@@ -1,0 +1,47 @@
+--Killerman
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('Killerman', TO_DATE('2019-07-01', 'YYYY-MM-DD'), 'Chcący ustawić się dwaj kumple zawierają narkotykową transakcje. Sprawy idą źle, gdy zadzierają ze skorumpowanymi policjantami.', '114', '5');
+
+--Przypływ wiary
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('PRZYPŁYW WIARY', TO_DATE('2019-04-10', 'YYYY-MM-DD'), 'Gdy adoptowany syn Joyce John, wpada do lodowatej wody na zamarzniętym jeziorze w Missouri, wszystko wydaje się stracone. Jej niezachwiana wiara porywa wszystkich dookoła do modlitwy za uzdrowienie Johna.', '116', '7');
+
+--Platforma
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('PLATFORMA', TO_DATE('2019-10-06', 'YYYY-MM-DD'), 'Betonowa płyta z jedzeniem zjeżdża w dół w wielopoziomowym więzieniu. Dla osadzonych zamkniętych na najniższych piętrach pozostaną tylko resztki — albo głód i rozpacz.', '94', '7');
+
+--Rocketman
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('ROCKETMAN', TO_DATE('2019-05-16', 'YYYY-MM-DD'), 'Historia życia Eltona Johna ukazująca artystę od jego najmłodszych lat w Królewskiej Akademii Muzycznej po długoletnią współpracę z autorem tekstów, Berniem Taupinem.', '121', '7');
+
+--Richard Jewell
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('RICHARD JEWELL', TO_DATE('2019-11-20', 'YYYY-MM-DD'), 'Amerykański ochroniarz ratuje życie tysięcy ludzi, zapobiegając wybuchowi bomby w trakcie igrzysk olimpijskich. Tymczasem media podają fałszywą informację, jakoby to on był terrorystą.', '129', '7');
+
+--Seberg
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('SEBERG', TO_DATE('2019-08-30', 'YYYY-MM-DD'), 'Kiedy aktorka Jean Seberg angażuje się w ruch na rzecz praw obywatelskich, FBI zaczyna ją obserwować.', '96', '6');
+
+--Wystrzałowa MISS
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('WYSTRZAŁOWA MISS', TO_DATE('2019-01-25', 'YYYY-MM-DD'), 'Makijażystka z Hollywood podróżuje do Tijuany, by pomóc przyjaciółce wygrać konkurs piękności. Gdy ta, podczas strzelaniny w klubie, znika, Gloria staje się zakładniczką przywódcy kartelu.', '104', '6');
+
+--IO
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('IO', TO_DATE('2019-01-18', 'YYYY-MM-DD'), 'Nastolatka i jedna z ostatnich ocalałych na Ziemi podejmuje rozpaczliwą próbę uratowania zatrutej planety.', '96', '5');

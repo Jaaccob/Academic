@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="MDSYS" directorySegmentName="seg_0" id="MDSYS">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<nullInstance>true</nullInstance>
+<storableNullInstance>true</storableNullInstance>
+<permissions>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions1" id="4533DF92-1260-E918-E9C6-5CA91C11F649">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-19 14:52:42 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<sequence>10C81D15-D456-809C-9E40-EB6844ED12A0</sequence>
+</Permission>
+</permissions>
+</UserOraclev10g>

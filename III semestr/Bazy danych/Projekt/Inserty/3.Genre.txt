@@ -1,0 +1,40 @@
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film akcji');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film biograficzny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film dokumentalny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film dramatyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film edukacyjny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film Fantastyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film kryminalny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Thriller');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film fantastyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film polityczny');

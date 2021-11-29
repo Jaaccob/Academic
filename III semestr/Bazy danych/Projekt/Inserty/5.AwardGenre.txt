@@ -1,0 +1,105 @@
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(0,'Najlepszy film');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(1,'Najlepszy reżyser ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(2,'Najlepszy scenariusz oryginalny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(3,'Najlepszy scenariusz adaptowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(4,'Najlepszy aktor');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(5,'Najlepsza aktorka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(6,'Najlepszy aktor drugoplanowy');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(7,'Najlepsza aktorka drugoplanowa');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(8,'Najlepsza scenografia i dekoracja wnętrz');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(9,'Najlepsze zdjęcia');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(10,'Najlepszy montaż');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(11,'Najlepsze efekty specjalne');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(12,'Najlepszy dźwięk ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(13,'Najlepszy montaż dźwięku');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(14,'Najlepsza muzyka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(15,'Najlepsza piosenka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(16,'Najlepsze kostiumy');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(17,'Najlepsza charakteryzacja');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(18,'Najlepszy pełnometrażowy film animowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(19,'Najlepszy krótkometrażowy film animowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(20,'Najlepszy pełnometrażowy film dokumentalny ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(21,'Najlepszy krótkometrażowy film dokumentalny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(22,'Najlepszy film nieanglojęzyczny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(23,'Najlepszy krótkometrażowy film aktorski');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(24,'Najlepsza choreografia');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('25', 'Ulubiony dramat kinowy');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('26', 'Ulubiona aktorka dramatu');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('27', 'Najlepszy debiut reżyserski');
+
+

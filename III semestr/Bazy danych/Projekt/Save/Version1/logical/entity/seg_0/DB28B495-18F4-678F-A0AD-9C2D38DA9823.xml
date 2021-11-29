@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DB28B495-18F4-678F-A0AD-9C2D38DA9823" name="USERLOG">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Tabela "USERLOG" przechowuje informacje o czasie logowania użytkownika do aplikacji. Tabela głównie do przechowywania statystyk]]></comment>
+<generatorID>A6CA575C-95B8-CCFD-B981-38EC5B7AB6F0</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>userlog</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="USER idUser" id="FDF2C773-4B4A-45E9-9B5F-CF7A144FF44D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[IdUser wskazujący na użytkownika. Wszystkie logowania będą zapisywane w tej tabeli]]></comment>
+<commentInRDBMS><![CDATA[IdUser wskazujący na użytkownika. Wszystkie logowania będą zapisywane w tej tabeli]]></commentInRDBMS>
+<generatorID>802F1F19-4E52-03EE-ED10-AE317B8FB874</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1E97E98F-1CA2-0928-1E4D-8C164C0D8B3D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="A25234E9-9EF9-BBDC-3D86-74175CA2C518">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Data logowania użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Data logowania użytkownika]]></commentInRDBMS>
+<generatorID>D8F5BE56-83B8-BAC1-EBE1-9A985E721F78</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

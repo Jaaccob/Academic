@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2567EB8D-CCF2-DC7C-EFFF-F0CB3A27818F" name="CREATORMOVIE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>721B032C-FB2C-D3BE-85C5-13254C39F002</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>creatorMovie</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="5EF16020-153B-A0ED-0BDA-C3084A4F1FF0">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Id pracy jaka istnieje przy tworzeniu filmu]]></comment>
+<commentInRDBMS><![CDATA[Id pracy jaka istnieje przy tworzeniu filmu]]></commentInRDBMS>
+<generatorID>AF1C1FEF-C8A2-BC38-9AE4-A34DCB6BA65F</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="job" id="5D1F36A0-FFC9-0B83-912B-41DDC0C44E3B">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Opis pracy jaką można wykonywać przy tworzeniu filmu]]></comment>
+<commentInRDBMS><![CDATA[Opis pracy jaką można wykonywać przy tworzeniu filmu]]></commentInRDBMS>
+<generatorID>2403F9D7-0218-CD05-EE67-5DCEFDBD4CFE</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4C8B8546-36B7-948B-5210-2BF46D67E570" name="CREATORMOVIE PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>79DB5744-11EF-9E0D-818F-BE848A2E85FA</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5EF16020-153B-A0ED-0BDA-C3084A4F1FF0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,101 @@
+Zadanie 6
+ALTER TABLE PRACOWNICY
+ADD ID NUMBER NOT NULL;
+
+---------------------------------------------------------
+Zadanie 7
+SELECT TABLE_NAME FROM USER_TABLES;	<- POKAZUJE TABELE STWORZONE PRZEZ UŻYTKOWNIKA 
+
+DESC PRACOWNICY
+
+DESC DZIALY
+
+SELECT * FROM USER_TAB_COMMENTS;
+
+SELECT CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME, COLUMN_NAME, R_CONSTRAINT_NAME FROM USER_CONS_COLUMNS NATURAL JOIN USER_CONSTRAINTS;
+
+
+---------------------------------------------------------
+Zadanie 8
+ALTER TABLE PRACOWNICY
+DROP COLUMN ID;
+
+---------------------------------------------------------
+Zadanie 9
+ALTER TABLE PRACOWNICY
+MODIFY NAZWISKO VARCHAR2(20);
+
+---------------------------------------------------------
+Zadanie 10
+CREATE TABLE EMP1
+AS SELECT * FROM EMP;
+
+ALTER TABLE EMP1 
+ADD CONSTRAINT PK_EMPNO PRIMARY KEY(EMPNO); 
+
+
+
+---------------------------------------------------------
+Zadanie 11
+RENAME EMP1 TO EMP2
+
+---------------------------------------------------------
+Zadanie 12
+CREATE VIEW VIER_EMP
+(Id_pracownika, Nazwisko, Stanowisko, Przelozony, Data_zatrudnienia, Wypłata, Prowizja, Numer_działu) AS
+SELECT *
+FROM EMP
+WHERE DEPTNO = 20;
+
+---------------------------------------------------------
+Zadanie 13
+CREATE OR REPLACE VIEW VIER_EMP
+(Id_pracownika, Nazwisko, Stanowisko, Przelozony, Data_zatrudnienia, Wypłata, Prowizja, Numer_działu) AS
+SELECT *
+FROM EMP
+WHERE DEPTNO = 20 or DEPTNO = 10;
+
+---------------------------------------------------------
+Zadanie 14
+DELETE FROM EMP2;
+
+---------------------------------------------------------
+Zadanie 15
+INSERT INTO EMP2
+(EMPNO,ENAME,SAL)
+VALUES
+(1111,'SALESMAN',1000);
+
+B)
+INSERT INTO EMP2
+SELECT * FROM EMP;
+---------------------------------------------------------
+Zadanie 16
+Natural join można korzystać gdy chociaż 1 nazwa atrybutów będzie taka sama
+Natural left join
+Natural right join
+Natural full join
+
+SELECT EMP2.EMPNO, EMP2.ENAME, DEPTNO, DEPT.DNAME FROM EMP2 NATURAL LEFT JOIN DEPT;
+
+---------------------------------------------------------
+Zadanie 17
+UPDATE EMP2
+SET SAL = 3000
+WHERE ENAME = 'BLAKE';
+
+---------------------------------------------------------
+Zadanie 18
+UPDATE DZIALY
+SET MAKS_PENSJA = (SELECT MAX(SAL) VIEW_EMP WHERE DEPTNO = NR_DZIALU);
+
+---------------------------------------------------------
+Zadanie 19
+DELETE EMP2 WHERE DEPTNO = 30;
+
+---------------------------------------------------------
+Zadanie 20
+DROP VIEW VIEW_EMP;
+DROP TABLE EMP2 CASCADE CONSTRAINTS PURGE;
+
+

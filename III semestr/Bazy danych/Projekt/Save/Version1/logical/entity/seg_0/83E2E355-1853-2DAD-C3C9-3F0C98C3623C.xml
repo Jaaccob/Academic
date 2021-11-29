@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="83E2E355-1853-2DAD-C3C9-3F0C98C3623C" name="MOVIE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>1A27A656-FDC2-406C-82D5-6841C4551A59</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>movie</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="33156692-23BD-5C37-A512-8C4074E4186D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Id filmu przypisywana automatycznie przez wyzwalacz ]]></comment>
+<commentInRDBMS><![CDATA[Id filmu przypisywana automatycznie przez wyzwalacz ]]></commentInRDBMS>
+<generatorID>1AC09832-AF2A-4015-9458-EA8467732613</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="title" id="82A28E71-08E2-D184-D889-463FCC546084">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Tytuł filmu]]></comment>
+<commentInRDBMS><![CDATA[Tytuł filmu]]></commentInRDBMS>
+<generatorID>4A5D72F0-12E1-5A5D-5D40-196C0080610B</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="relaseDate" id="A902EDB7-66DF-9556-F9E9-F61C8C1F7F6F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Data wypuszczenia filmu do kin]]></comment>
+<commentInRDBMS><![CDATA[Data wypuszczenia filmu do kin]]></commentInRDBMS>
+<generatorID>9B7502B7-3F6D-19E3-C464-EDA4DCE5006F</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="356E5992-A99E-A01B-9F23-BE589375B15D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Opis filmu]]></comment>
+<commentInRDBMS><![CDATA[Opis filmu]]></commentInRDBMS>
+<generatorID>E6858756-D65B-793F-0965-539DE63498C3</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="length" id="7023A3E8-B193-A986-F618-37A2E043A712">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Długość filmu w minutach]]></comment>
+<commentInRDBMS><![CDATA[Długość filmu w minutach]]></commentInRDBMS>
+<generatorID>C1CE0BED-61D8-48F1-082F-D093B3FF4944</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,11,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mark" id="E9F8EBBF-51C3-0FE6-4BE8-C8EEB970F18B">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Ocena filmu pobierana z zewnętrznej aplikacji]]></comment>
+<commentInRDBMS><![CDATA[Ocena filmu pobierana z zewnętrznej aplikacji]]></commentInRDBMS>
+<generatorID>28F9AF90-5525-3918-F5E7-62790E37CED5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="poster" id="463E2357-0F55-DC5D-8CF0-C9A4B2BFF84C">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Plakat filmu]]></comment>
+<commentInRDBMS><![CDATA[Plakat filmu]]></commentInRDBMS>
+<generatorID>5E2ECD7A-94E9-C78D-80FE-8CB8873CEA3E</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8156A982-E57A-CE0C-A556-A27B1C1319FF" name="MOVIE PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>9BE1784C-7808-7D2A-0ACA-61667F11BBDE</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>33156692-23BD-5C37-A512-8C4074E4186D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

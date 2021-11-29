@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4BE89F2A-F7B9-53B4-7217-BAA02786E841" name="USER">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Tabela "USER" przechowuje informacje o zarejestrowanych użytkownikach]]></comment>
+<generatorID>7A1042D2-83D4-4112-9475-0A466B461430</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>user</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idUser" id="1E97E98F-1CA2-0928-1E4D-8C164C0D8B3D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[IdUser wskazujące jednoznacznie na konkretnego użytkownika aplikacji]]></comment>
+<commentInRDBMS><![CDATA[IdUser wskazujące jednoznacznie na konkretnego użytkownika aplikacji]]></commentInRDBMS>
+<generatorID>B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="E3B69A0B-EBDE-FF23-E1CC-7205C7331181">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Nazwa wybrana przez użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Nazwa wybrana przez użytkownika]]></commentInRDBMS>
+<generatorID>359ECC74-5C23-E86A-86B2-437F5719A2C0</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="9F7837F6-C138-00D0-0025-53ED9CC84EC5">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>64C455EC-7EFE-8276-50A9-D5E60F98B47A</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="age" id="C0ECA6BF-30C9-FAA9-64F4-7CC40DDF3F08">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>4C40C06A-91FD-8FAC-329B-F707CDF731A1</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sex" id="1BE85B44-AEFA-C71C-BEFD-F7EF9E059C04">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 = mężczyzna a 1 = kobieta]]></commentInRDBMS>
+<generatorID>73F493C3-13F7-CD0A-D5C6-C805A4937A4F</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<listOfValues>
+<valueDef value="0" description="Mężczyzna"/>
+<valueDef value="1" description="Kobieta"/>
+</listOfValues>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="password" id="EAEDB585-1D24-8FFB-9307-F6081C4727A9">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>18FD404B-E11B-21D4-B84C-008C06777496</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="588800C0-F6A5-D31B-5623-2663E24B01C9" name="USER PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>6BAB7993-A893-92BA-1329-7B2E3AE8F30E</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1E97E98F-1CA2-0928-1E4D-8C164C0D8B3D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

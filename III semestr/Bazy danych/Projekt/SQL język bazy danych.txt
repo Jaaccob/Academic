@@ -1,0 +1,1273 @@
+CREATE TABLE award (
+    idmovie   NUMBER(11) NOT NULL,
+    idperson  NUMBER(11),
+    idgenre   NUMBER(11) NOT NULL,
+    "date"    DATE,
+    info      VARCHAR2(200),
+    won       NUMBER(1)
+);
+
+ALTER TABLE award
+    ADD CHECK ( won BETWEEN 0 AND 1
+                OR won IN ( 0, 1 ) );
+
+COMMENT ON COLUMN award.idmovie IS
+    'idMovie wskazuje na konkretny film, który otrzymał nagrodę lub otrzymał nominację';
+
+COMMENT ON COLUMN award.idperson IS
+    'idPerson wskazuje na konkretną osobę, która otrzymała nagrodę lub otrzymała nominację';
+
+COMMENT ON COLUMN award."date" IS
+    'Data otrzymania nominacji/nagrody';
+
+COMMENT ON COLUMN award.info IS
+    'Opis nominacja/wygrana oraz jaka kategoria';
+
+COMMENT ON COLUMN award.won IS
+    'Jeśli 0 film otrzymał nominację
+Jeśli 1 film otrzymał wygraną';
+
+CREATE TABLE awardgenre (
+    idgenre      NUMBER(11) NOT NULL,
+    description  VARCHAR2(255)
+);
+
+COMMENT ON COLUMN awardgenre.idgenre IS
+    'idGenre oznacza jednoznacznie na daną kategorię w jakiej film uzyskał nagrode';
+
+COMMENT ON COLUMN awardgenre.description IS
+    'Dłuższy opis kategorii w jakiej film otrzymał nagrodę';
+
+CREATE INDEX awardgenre__idx ON
+    awardgenre (
+        idgenre
+    ASC );
+
+ALTER TABLE awardgenre ADD CONSTRAINT awardgenre_pk PRIMARY KEY ( idgenre );
+
+CREATE TABLE "COMMENT" (
+    id           NUMBER(11) NOT NULL,
+    mark         NUMBER(2),
+    description  VARCHAR2(255),
+    "date"       DATE
+);
+
+COMMENT ON COLUMN "COMMENT".id IS
+    'Id wskazujące jednoznacznie na konkretny komentarz użytkownia ';
+
+COMMENT ON COLUMN "COMMENT".mark IS
+    'Ocena użytkownika w skali od 1 do 10';
+
+COMMENT ON COLUMN "COMMENT".description IS
+    'Opis słowny komentarza';
+
+COMMENT ON COLUMN "COMMENT"."date" IS
+    'Data wystawienia komentarza przez użytkownika';
+
+CREATE UNIQUE INDEX comment__idxv1 ON
+    "COMMENT" (
+        id
+    ASC );
+
+ALTER TABLE "COMMENT" ADD CONSTRAINT comment_pk PRIMARY KEY ( id );
+
+CREATE TABLE commentmovie (
+    movie_id     NUMBER(11) NOT NULL,
+    user_iduser  NUMBER(11) NOT NULL,
+    comment_id   NUMBER(11) NOT NULL
+);
+
+CREATE TABLE creator (
+    movie_id         NUMBER(11) NOT NULL,
+    person_id        NUMBER(11) NOT NULL,
+    creatormovie_id  NUMBER(11) NOT NULL
+);
+
+COMMENT ON COLUMN creator.creatormovie_id IS
+    '0 = aktor, 1 = twórca(np: dziękowiec, reżyser)';
+
+CREATE TABLE creatormovie (
+    id   NUMBER(11) NOT NULL,
+    job  VARCHAR2(25)
+);
+
+COMMENT ON COLUMN creatormovie.id IS
+    'Id pracy jaka istnieje przy tworzeniu filmu';
+
+COMMENT ON COLUMN creatormovie.job IS
+    'Opis pracy jaką można wykonywać przy tworzeniu filmu';
+
+CREATE UNIQUE INDEX creatormovie__idxv1 ON
+    creatormovie (
+        id
+    ASC );
+
+ALTER TABLE creatormovie ADD CONSTRAINT creatormovie_pk PRIMARY KEY ( id );
+
+CREATE TABLE frienduser (
+    user_iduser   NUMBER(11) NOT NULL,
+    user_iduser1  NUMBER(11)
+);
+
+CREATE TABLE genre (
+    id     NUMBER(11) NOT NULL,
+    genre  VARCHAR2(50)
+);
+
+COMMENT ON COLUMN genre.id IS
+    'Id generuje się automatycznie przez wyzwalacz';
+
+COMMENT ON COLUMN genre.genre IS
+    'Opis gatunku filmu np akcji, fantastyczny itp.';
+
+CREATE INDEX genre__idx ON
+    genre (
+        id
+    ASC );
+
+ALTER TABLE genre ADD CONSTRAINT genre_pk PRIMARY KEY ( id );
+
+CREATE TABLE movie (
+    id           NUMBER(11) NOT NULL,
+    title        VARCHAR2(100) NOT NULL,
+    relasedate   DATE NOT NULL,
+    description  VARCHAR2(1000),
+    length       NUMBER(11, 2) NOT NULL,
+    mark         NUMBER,
+    poster       BLOB
+);
+
+COMMENT ON COLUMN movie.id IS
+    'Id filmu przypisywana automatycznie przez wyzwalacz ';
+
+COMMENT ON COLUMN movie.title IS
+    'Tytuł filmu';
+
+COMMENT ON COLUMN movie.relasedate IS
+    'Data wypuszczenia filmu do kin';
+
+COMMENT ON COLUMN movie.description IS
+    'Opis filmu';
+
+COMMENT ON COLUMN movie.length IS
+    'Długość filmu w minutach';
+
+COMMENT ON COLUMN movie.mark IS
+    'Ocena filmu pobierana z zewnętrznej aplikacji';
+
+COMMENT ON COLUMN movie.poster IS
+    'Plakat filmu';
+
+CREATE UNIQUE INDEX movie__idxv1 ON
+    movie (
+        id
+    ASC );
+
+ALTER TABLE movie ADD CONSTRAINT movie_pk PRIMARY KEY ( id );
+
+CREATE TABLE moviegenre (
+    movie_id  NUMBER(11) NOT NULL,
+    genre_id  NUMBER(11) NOT NULL
+);
+
+COMMENT ON COLUMN moviegenre.movie_id IS
+    'IdMovie wskazuje na konkretny film';
+
+COMMENT ON COLUMN moviegenre.genre_id IS
+    'IdGenre wskazuje na konkretny gatunek. Jeden film może mieć wiele gatunków';
+
+CREATE TABLE person (
+    id           NUMBER(11) NOT NULL,
+    name         VARCHAR2(255),
+    dateofbirth  DATE,
+    photo        BLOB
+);
+
+COMMENT ON COLUMN person.id IS
+    'Id identyfikuje jednoznacznie konkretną osobę, która tworzyła w jakikolwiek stopniu film';
+
+COMMENT ON COLUMN person.photo IS
+    'Zdjęcie osoby, która tworzyła film. Zdjęcie nie jest wymagane';
+
+CREATE UNIQUE INDEX person__idx ON
+    person (
+        id
+    ASC );
+
+ALTER TABLE person ADD CONSTRAINT person_pk PRIMARY KEY ( id );
+
+CREATE TABLE "USER" (
+    iduser    NUMBER(11) NOT NULL,
+    name      VARCHAR2(255),
+    email     VARCHAR2(255),
+    age       NUMBER(11),
+    sex       NUMBER(11),
+    password  VARCHAR2(255)
+);
+
+ALTER TABLE "USER"
+    ADD CHECK ( sex IN ( 0, 1 ) );
+
+COMMENT ON COLUMN "USER".iduser IS
+    'IdUser wskazujące jednoznacznie na konkretnego użytkownika aplikacji';
+
+COMMENT ON COLUMN "USER".name IS
+    'Nazwa wybrana przez użytkownika';
+
+COMMENT ON COLUMN "USER".sex IS
+    '0 = mężczyzna a 1 = kobieta';
+
+CREATE INDEX user__idxv1 ON
+    "USER" (
+        iduser
+    ASC );
+
+ALTER TABLE "USER" ADD CONSTRAINT user_pk PRIMARY KEY ( iduser );
+
+CREATE TABLE userlog (
+    user_iduser  NUMBER(11),
+    "date"       DATE
+);
+
+COMMENT ON COLUMN userlog.user_iduser IS
+    'IdUser wskazujący na użytkownika. Wszystkie logowania będą zapisywane w tej tabeli';
+
+COMMENT ON COLUMN userlog."date" IS
+    'Data logowania użytkownika';
+
+CREATE INDEX userlog__idx ON
+    userlog (
+        user_iduser
+    ASC );
+
+ALTER TABLE award
+    ADD CONSTRAINT award_awardgenre_fk FOREIGN KEY ( idgenre )
+        REFERENCES awardgenre ( idgenre );
+
+ALTER TABLE award
+    ADD CONSTRAINT award_movie_fk FOREIGN KEY ( idmovie )
+        REFERENCES movie ( id );
+
+ALTER TABLE award
+    ADD CONSTRAINT award_person_fk FOREIGN KEY ( idperson )
+        REFERENCES person ( id );
+
+ALTER TABLE commentmovie
+    ADD CONSTRAINT commentmovie_comment_fk FOREIGN KEY ( comment_id )
+        REFERENCES "COMMENT" ( id );
+
+ALTER TABLE commentmovie
+    ADD CONSTRAINT commentmovie_movie_fk FOREIGN KEY ( movie_id )
+        REFERENCES movie ( id );
+
+ALTER TABLE commentmovie
+    ADD CONSTRAINT commentmovie_user_fk FOREIGN KEY ( user_iduser )
+        REFERENCES "USER" ( iduser );
+
+ALTER TABLE creator
+    ADD CONSTRAINT creator_creatormovie_fk FOREIGN KEY ( creatormovie_id )
+        REFERENCES creatormovie ( id );
+
+ALTER TABLE creator
+    ADD CONSTRAINT creator_movie_fk FOREIGN KEY ( movie_id )
+        REFERENCES movie ( id );
+
+ALTER TABLE creator
+    ADD CONSTRAINT creator_person_fk FOREIGN KEY ( person_id )
+        REFERENCES person ( id );
+
+ALTER TABLE frienduser
+    ADD CONSTRAINT frienduser_user_fk FOREIGN KEY ( user_iduser1 )
+        REFERENCES "USER" ( iduser );
+
+ALTER TABLE frienduser
+    ADD CONSTRAINT frienduser_user_fkv1 FOREIGN KEY ( user_iduser )
+        REFERENCES "USER" ( iduser );
+
+ALTER TABLE moviegenre
+    ADD CONSTRAINT movegenre_genre_fk FOREIGN KEY ( genre_id )
+        REFERENCES genre ( id );
+
+ALTER TABLE moviegenre
+    ADD CONSTRAINT movegenre_movie_fk FOREIGN KEY ( movie_id )
+        REFERENCES movie ( id );
+
+ALTER TABLE userlog
+    ADD CONSTRAINT userlog_user_fk FOREIGN KEY ( user_iduser )
+        REFERENCES "USER" ( iduser );
+
+CREATE OR REPLACE TRIGGER fknto_award BEFORE
+    UPDATE OF idperson ON award
+    FOR EACH ROW
+BEGIN
+    IF :old.idperson IS NOT NULL THEN
+        raise_application_error(-20225, 'Non Transferable FK constraint AWARD_PERSON_FK on table AWARD is violated');
+    END IF;
+END;
+/
+
+CREATE OR REPLACE TRIGGER fknto_userlog BEFORE
+    UPDATE OF user_iduser ON userlog
+    FOR EACH ROW
+BEGIN
+    IF :old.user_iduser IS NOT NULL THEN
+        raise_application_error(-20225, 'Non Transferable FK constraint USERLOG_USER_FK on table USERLOG is violated');
+    END IF;
+END;
+/
+
+CREATE SEQUENCE comment_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER comment_id_trg BEFORE
+    INSERT ON "COMMENT"
+    FOR EACH ROW
+    WHEN ( new.id IS NULL )
+BEGIN
+    :new.id := comment_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE creatormovie_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER creatormovie_id_trg BEFORE
+    INSERT ON creatormovie
+    FOR EACH ROW
+    WHEN ( new.id IS NULL )
+BEGIN
+    :new.id := creatormovie_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE genre_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER genre_id_trg BEFORE
+    INSERT ON genre
+    FOR EACH ROW
+    WHEN ( new.id IS NULL )
+BEGIN
+    :new.id := genre_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE movie_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER movie_id_trg BEFORE
+    INSERT ON movie
+    FOR EACH ROW
+    WHEN ( new.id IS NULL )
+BEGIN
+    :new.id := movie_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE moviegenre_movie_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER moviegenre_movie_id_trg BEFORE
+    INSERT ON moviegenre
+    FOR EACH ROW
+    WHEN ( new.movie_id IS NULL )
+BEGIN
+    :new.movie_id := moviegenre_movie_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE person_id_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER person_id_trg BEFORE
+    INSERT ON person
+    FOR EACH ROW
+    WHEN ( new.id IS NULL )
+BEGIN
+    :new.id := person_id_seq.nextval;
+END;
+/
+
+CREATE SEQUENCE user_iduser_seq START WITH 0 MINVALUE 0 NOCACHE ORDER;
+
+CREATE OR REPLACE TRIGGER user_iduser_trg BEFORE
+    INSERT ON "USER"
+    FOR EACH ROW
+    WHEN ( new.iduser IS NULL )
+BEGIN
+    :new.iduser := user_iduser_seq.nextval;
+END;
+/
+--IO AKTORZY
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Margaret Qualley',TO_DATE('23/10/1994','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Anthony Mackie',TO_DATE('23/09/1978','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Danny Huston',TO_DATE('14/05/1962','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Tom Payne V',TO_DATE('21/12/1982','DD/MM/YYYY'));
+
+--IO Twórcy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Jonathan Helpert',TO_DATE('22/07/1983','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Clay Jeter');
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Henry Jackman I');
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Tony Randel I',TO_DATE('29/05/1956','DD/MM/YYYY'));
+---------------------------------
+--WYSTRZAŁOWA MISS AKTORZY
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Gina Rodriguez I',TO_DATE('30/07/1984','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Matt Lauria',TO_DATE('22/06/1984','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Aislinn Derbez',TO_DATE('18/03/1986','DD/MM/YYYY'));
+
+--MISS AKTORZY Twórcy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Catherine Hardwicke',TO_DATE('21/10/1955','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Gareth Dunnet Alcocer');
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Patrick Murguia',TO_DATE('05/01/1971','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Alex Heffes',TO_DATE('02/09/1971','DD/MM/YYYY'));
+--------------------------------
+--SEBERG Aktorzy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Jack O"Connell IV',TO_DATE('01/09/1990','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Kristen Stewart I',TO_DATE('09/04/1990','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Zazie Beetz',TO_DATE('25/05/1991','DD/MM/YYYY'));
+
+--SEBERG Twórcy
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Benedict Andrews');
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Rachel Morrison I');
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Jed Kurzel');
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Pamela Martin II');
+
+--RICHARD JEWELL Aktorzy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Paul Walter Hauser',TO_DATE('15/10/1986','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Kathy Bates I',TO_DATE('28/06/1948','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Sam Rockwell',TO_DATE('05/11/1968','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Jon Hamm I',TO_DATE('10/03/1971','DD/MM/YYYY'));
+
+
+--RICHARD JEWELL Twórcy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Clint Eastwood',TO_DATE('31/05/1930','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Ronald R. Reiss');
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Deborah Hopper');
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Leonardo DiCaprio',TO_DATE('11/11/1974','DD/MM/YYYY'));
+
+
+--ROCKETMAN Aktorzy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Taron Egerton',TO_DATE('10/11/1989','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Jamie Bell I',TO_DATE('14/03/1986','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Richard Madden I',TO_DATE('19/06/1986','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Bryce Dallas Howard',TO_DATE('02/03/1981','DD/MM/YYYY'));
+
+--ROCKETMAN Twórcy
+INSERT INTO PERSON
+(NAME)
+VALUES
+('Adam Bohling');
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('David Furnish I',TO_DATE('25/10/1962','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('David Reid V',TO_DATE('','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Dexter Fletcher I',TO_DATE('31/01/1966','DD/MM/YYYY'));
+
+--Platforma Aktorzy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Ivan Massagué',TO_DATE('','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Zorion Eguileor',TO_DATE('15/03/1946','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Antonia San Juan',TO_DATE('22/03/1961','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Emilio Buale',TO_DATE('26/11/1972','DD/MM/YYYY'));
+
+--Platforma Twórcy
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('David Desola',TO_DATE('','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Pedro Rivero',TO_DATE('','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Galder Gaztelu-Urrutia',TO_DATE('','DD/MM/YYYY'));
+INSERT INTO PERSON
+(NAME,DATEOFBIRTH)
+VALUES
+('Carlos Juárez I',TO_DATE('','DD/MM/YYYY'));
+
+--Killerman
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('Killerman', TO_DATE('2019-07-01', 'YYYY-MM-DD'), 'Chcący ustawić się dwaj kumple zawierają narkotykową transakcje. Sprawy idą źle, gdy zadzierają ze skorumpowanymi policjantami.', '114', '5');
+
+--Przypływ wiary
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('PRZYPŁYW WIARY', TO_DATE('2019-04-10', 'YYYY-MM-DD'), 'Gdy adoptowany syn Joyce John, wpada do lodowatej wody na zamarzniętym jeziorze w Missouri, wszystko wydaje się stracone. Jej niezachwiana wiara porywa wszystkich dookoła do modlitwy za uzdrowienie Johna.', '116', '7');
+
+--Platforma
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('PLATFORMA', TO_DATE('2019-10-06', 'YYYY-MM-DD'), 'Betonowa płyta z jedzeniem zjeżdża w dół w wielopoziomowym więzieniu. Dla osadzonych zamkniętych na najniższych piętrach pozostaną tylko resztki — albo głód i rozpacz.', '94', '7');
+
+--Rocketman
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('ROCKETMAN', TO_DATE('2019-05-16', 'YYYY-MM-DD'), 'Historia życia Eltona Johna ukazująca artystę od jego najmłodszych lat w Królewskiej Akademii Muzycznej po długoletnią współpracę z autorem tekstów, Berniem Taupinem.', '121', '7');
+
+--Richard Jewell
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('RICHARD JEWELL', TO_DATE('2019-11-20', 'YYYY-MM-DD'), 'Amerykański ochroniarz ratuje życie tysięcy ludzi, zapobiegając wybuchowi bomby w trakcie igrzysk olimpijskich. Tymczasem media podają fałszywą informację, jakoby to on był terrorystą.', '129', '7');
+
+--Seberg
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('SEBERG', TO_DATE('2019-08-30', 'YYYY-MM-DD'), 'Kiedy aktorka Jean Seberg angażuje się w ruch na rzecz praw obywatelskich, FBI zaczyna ją obserwować.', '96', '6');
+
+--Wystrzałowa MISS
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('WYSTRZAŁOWA MISS', TO_DATE('2019-01-25', 'YYYY-MM-DD'), 'Makijażystka z Hollywood podróżuje do Tijuany, by pomóc przyjaciółce wygrać konkurs piękności. Gdy ta, podczas strzelaniny w klubie, znika, Gloria staje się zakładniczką przywódcy kartelu.', '104', '6');
+
+--IO
+INSERT INTO MOVIE 
+(TITLE, RELASEDATE, DESCRIPTION, LENGTH, MARK) 
+VALUES 
+('IO', TO_DATE('2019-01-18', 'YYYY-MM-DD'), 'Nastolatka i jedna z ostatnich ocalałych na Ziemi podejmuje rozpaczliwą próbę uratowania zatrutej planety.', '96', '5');
+
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film akcji');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film biograficzny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film dokumentalny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film dramatyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film edukacyjny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film Fantastyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film kryminalny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Thriller');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film fantastyczny');
+INSERT INTO GENRE
+(genre)
+VALUES
+('Film polityczny');
+
+INSERT INTO MOVIEGENRE
+VALUES
+(0,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(0,6);
+INSERT INTO MOVIEGENRE
+VALUES
+(0,0);
+INSERT INTO MOVIEGENRE
+VALUES
+(1,1);
+INSERT INTO MOVIEGENRE
+VALUES
+(1,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(2,7);
+INSERT INTO MOVIEGENRE
+VALUES
+(2,8);
+INSERT INTO MOVIEGENRE
+VALUES
+(3,1);
+INSERT INTO MOVIEGENRE
+VALUES
+(3,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(4,1);
+INSERT INTO MOVIEGENRE
+VALUES
+(4,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(5,1);
+INSERT INTO MOVIEGENRE
+VALUES
+(5,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(5,7);
+INSERT INTO MOVIEGENRE
+VALUES
+(5,9);
+INSERT INTO MOVIEGENRE
+VALUES
+(6,0);
+INSERT INTO MOVIEGENRE
+VALUES
+(6,3);
+INSERT INTO MOVIEGENRE
+VALUES
+(7,8);
+
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(0,'Najlepszy film');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(1,'Najlepszy reżyser ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(2,'Najlepszy scenariusz oryginalny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(3,'Najlepszy scenariusz adaptowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(4,'Najlepszy aktor');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(5,'Najlepsza aktorka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(6,'Najlepszy aktor drugoplanowy');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(7,'Najlepsza aktorka drugoplanowa');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(8,'Najlepsza scenografia i dekoracja wnętrz');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(9,'Najlepsze zdjęcia');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(10,'Najlepszy montaż');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(11,'Najlepsze efekty specjalne');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(12,'Najlepszy dźwięk ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(13,'Najlepszy montaż dźwięku');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(14,'Najlepsza muzyka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(15,'Najlepsza piosenka');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(16,'Najlepsze kostiumy');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(17,'Najlepsza charakteryzacja');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(18,'Najlepszy pełnometrażowy film animowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(19,'Najlepszy krótkometrażowy film animowany');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(20,'Najlepszy pełnometrażowy film dokumentalny ');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(21,'Najlepszy krótkometrażowy film dokumentalny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(22,'Najlepszy film nieanglojęzyczny');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(23,'Najlepszy krótkometrażowy film aktorski');
+INSERT INTO AWARDGENRE
+(IDGENRE, description)
+VALUES
+(24,'Najlepsza choreografia');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('25', 'Ulubiony dramat kinowy');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('26', 'Ulubiona aktorka dramatu');
+INSERT INTO AWARDGENRE (IDGENRE, DESCRIPTION) VALUES ('27', 'Najlepszy debiut reżyserski');
+
+
+--Przyplyw wiary
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'15',TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar - "Im Standing with You", wyk. Chrissy Metz','0');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'15',TO_DATE('01/01/2020','dd/mm/yyyy'),'CriticsChoice - "Im Standing with You", wyk. Chrissy Metz','0');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'25',TO_DATE('01/01/2019','dd/mm/yyyy'),'Teen Choice','0');
+
+--Platforma
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('2',Null,'11',TO_DATE('01/01/2020','dd/mm/yyyy'),'Europejska Nagroda Filmowa (od 1997) ','1');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,Null,11,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya - Mario Campoy i Iñaki Madariaga',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,43,2,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,44,27,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,44,0,TO_DATE('01/01/2020','dd/mm/yyyy'),'Nagroda Publiczności - w sekcji "Szaleństwo Północy" ("Midnight Madness")',1);
+
+--ROCKETMAN
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,15,TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar - "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,31,5,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,15,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob - "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,27,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',0);
+
+--RICHARD JEWELL
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(4,24,7,TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(4,24,7,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',0);
+
+--IO
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(7,NULL,13,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złota Szpula',0);
+
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Aktor');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Producent wykonawczy');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Reżyser');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Scenariusz');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Muzyka');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Montaż');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Zdjęcia');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Dekorator wnętrz');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Kostiumy');
+INSERT INTO CREATORMOVIE
+(JOB)
+VALUES
+('Producent');
+
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,1,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,2,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,2,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,2,1);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,3,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,4,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,5,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,6,3);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,7,4);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(7,8,5);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,9,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,2,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,10,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,11,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,12,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,13,3);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,14,6);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(6,15,4);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,16,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,17,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,18,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,19,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,20,6);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,21,4);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(5,22,5);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,23,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,24,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,25,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,26,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,27,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,28,7);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,29,8);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(4,30,9);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,31,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,32,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,33,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,34,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,35,9);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,36,9);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,37,9);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(3,38,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,39,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,40,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,41,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,42,0);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,43,3);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,44,2);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,45,9);
+INSERT INTO CREATOR
+(MOVIE_ID,PERSON_ID,CREATORMOVIE_ID)
+VALUES
+(2,45,1);
+
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('J_Pa87','J_Pa87@gmail.com',18,0,'J_Pa87');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(8,'Dla mnie, jako osoby wierzącej ten film okazał się strzałem w 10. Film jest piękny, dobry, prawdziwy, wzruszający, mówiący o autentycznych przeżyciach matki, ojca, bliskich wobec wielkiego nieszczęścia.',to_date('18/01/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(1,0,0);
+
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('maximus_','maximus_@gmail.com',21,0,'maximus_');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(7,'To jest niepojęte, że dziadek Clint 89 lat nie zwalnia, ma tak ciekawe tematy i kręci naprawdę dobre jakościowo filmy.',to_date('18/01/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(4,1,1);
+
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('KASTCOM','KASTCOM@gmail.com',32,1,'KASTCOM');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(9,'Za konwencje, za przesłanie i mądrość, za wszystkie alegorie kapitalistycznej rzeczywistości pokazane w brutalny i dosadny sposób. Film bije po pysku. I to chodzi. ',to_date('18/03/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(2,2,2);
+
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('19/01/2021','dd/mm/yyyy'));
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('17/01/2021','dd/mm/yyyy'));
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('15/01/2021','dd/mm/yyyy'));
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('09/01/2021','dd/mm/yyyy'));
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('03/01/2021','dd/mm/yyyy'));
+INSERT INTO USERLOG
+(USER_IDUSER,"date")
+VALUES
+(0,to_date('20/12/2020','dd/mm/yyyy'));
+
+
+
+INSERT INTO FRIENDUSER
+(USER_IDUSER,USER_IDUSER1)
+VALUES
+(0,1);
+INSERT INTO FRIENDUSER
+(USER_IDUSER,USER_IDUSER1)
+VALUES
+(0,2);
+INSERT INTO FRIENDUSER
+(USER_IDUSER,USER_IDUSER1)
+VALUES
+(2,0);
+INSERT INTO FRIENDUSER
+(USER_IDUSER,USER_IDUSER1)
+VALUES
+(1,0);
+
+CREATE OR REPLACE TRIGGER USERLOG_DATE_TRG BEFORE
+    INSERT ON "USERLOG"
+    FOR EACH ROW
+    DECLARE
+    data date;
+BEGIN
+    select sysdate into data from dual;
+    :new."date" := data;
+END;
+/
+
+INSERT INTO USERLOG
+(USER_IDUSER)
+VALUES
+(0);
+INSERT INTO USERLOG
+(USER_IDUSER)
+VALUES
+(1);
+INSERT INTO USERLOG
+(USER_IDUSER)
+VALUES
+(2);

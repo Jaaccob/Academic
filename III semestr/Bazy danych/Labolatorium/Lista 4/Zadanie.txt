@@ -1,0 +1,40 @@
+//Druga postać normalna
+
+PK = {Nr_zamówienia,Id_części}(Z)
+Nr_zamówienia -> Id_dostawcy
+Nr_zamówienia -> Nazwa_dostawcy
+Nr_zamówienia -> Adres_dostawcy
+
+Id_części -> Nazwa_części
+Id_części -> Magazyn
+Id_części -> Adres_magazynu
+
+{Nr_zamówienia, Id_części} -> Ilość
+
+N(Z1) = {Nr_zamówienia,Id_części,Ilość}
+Pk(Z1) = {Nr_zamówienia,Id_części}
+
+N(Z2) = {Nr_zamówienia,Id_dostawcy,Nazwa_dostawcy,Adres_dostawcy}
+Pk(Z2) = {Nr_zamówienia}
+
+N(Z3) = {Id_części,Nazwa_części,Magazyn,Adres_magazynu}
+Pk(Z3) = {Id_części}
+
+
+//Trzecia postać normalna
+
+N(Z1) = {Nr_zamówienia,Id_części,Ilość}
+Pk(Z1) = {Nr_zamówienia,Id_części}
+
+N(Z2.1) = {Nr_zamówienia,Id_dostawcy}
+Pk(Z2.1) = {Nr_zamówienia}
+
+N(Z2.2) = {Id_dostawcy,Nazwa_dostawcy,Adres_dostawcy}
+Pk(Z2.2) = {Id_dostawcy}
+
+N(Z3.1) = {Id_części,Nazwa_części,Magazyn}
+Pk(Z3.1) = {Id_części}
+
+N(Z3.2) = {Magazyn,Adres_magazynu}
+Pk(Z3.2) = {Magazyn}
+

@@ -1,0 +1,44 @@
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('J_Pa87','J_Pa87@gmail.com',18,0,'J_Pa87');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(8,'Dla mnie, jako osoby wierzącej ten film okazał się strzałem w 10. Film jest piękny, dobry, prawdziwy, wzruszający, mówiący o autentycznych przeżyciach matki, ojca, bliskich wobec wielkiego nieszczęścia.',to_date('18/01/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(1,0,0);
+
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('maximus_','maximus_@gmail.com',21,0,'maximus_');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(7,'To jest niepojęte, że dziadek Clint 89 lat nie zwalnia, ma tak ciekawe tematy i kręci naprawdę dobre jakościowo filmy.',to_date('18/01/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(4,1,1);
+
+INSERT INTO "USER"
+("NAME",EMAIL,AGE,SEX,"PASSWORD")
+VALUES
+('KASTCOM','KASTCOM@gmail.com',32,1,'KASTCOM');
+
+INSERT INTO "COMMENT"
+("MARK","DESCRIPTION","date")
+VALUES
+(9,'Za konwencje, za przesłanie i mądrość, za wszystkie alegorie kapitalistycznej rzeczywistości pokazane w brutalny i dosadny sposób. Film bije po pysku. I to chodzi. ',to_date('18/03/2019','dd/mm/yyyy'));
+
+INSERT INTO COMMENTMOVIE
+(MOVIE_ID,USER_IDUSER,COMMENT_ID)
+VALUES
+(2,2,2);

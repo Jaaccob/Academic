@@ -1,0 +1,188 @@
+Zadanie 1
+A)
+SELECT
+	ename, sal
+FROM
+	EMP
+ORDER BY
+	ename;
+
+B)
+SELECT
+	ename, sal
+FROM
+	EMP
+ORDER BY
+	ename DESC;
+
+C)
+SELECT
+	ename, sal
+FROM
+	EMP
+ORDER BY
+	sal;
+
+D)
+SELECT
+	ename, sal
+FROM
+	EMP
+ORDER BY
+	sal DESC;
+
+E)
+SELECT
+	ename, sal
+FROM
+	EMP
+ORDER BY
+	sal, ename;
+
+Zadanie 2
+SELECT 
+	count(*)
+FROM
+	EMP;
+Zadanie 3
+a)
+SELECT 
+	MIN(sel)
+FROM
+	EMP;
+b)
+SELECT 
+	MIN(sel)
+FROM
+	EMP;
+c)
+SELECT 
+	AVG(sel)	
+FROM
+	EMP;
+
+---------------------------------------------------------------
+Zadanie 4
+a)
+SELECT
+	MIN(sal)
+FROM
+	EMP
+WHERE
+	deptno = 10;
+
+b)
+SELECT
+	MIN(EMP.sal)
+FROM
+	EMP NATURAL JOIN DEMP
+WHERE
+	DEMP.DNAME = 'SALES';
+
+c)
+SELECT
+	DEPT.DNAME, AVG(EMP.SAL)
+FROM
+	EMP NATURAL JOIN DEPT
+GROUP BY 
+	DEPT.DNAME;
+
+d)
+SELECT
+	MIN(sal),DEPTNO
+FROM
+	EMP
+WHERE
+	deptno = 10
+GROUP BY 
+	DEPTNO;
+
+e)
+SELECT
+	MIN(sal), DEPTNO, DNAME
+FROM
+	EMP NATURAL JOIN DEPT
+WHERE
+	deptno = 10
+GROUP BY
+	DEPTNO, DNAME;
+
+f)
+SELECT
+	AVG(SAL),DEPTNO 
+FROM
+	EMP
+GROUP BY
+	DEPTNO
+HAVING
+	COUNT(*) >= 5;
+
+g)
+SELECT
+	DEPTNO, DNAME
+FROM	
+	EMP NATURAL JOIN DEPT
+GROUP BY 
+	DEPTNO, DNAME
+HAVING 
+	AVG(SAL) > 2100;
+
+---------------------------------------------------------------
+Zadanie 5
+A) 
+SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL = (SELECT MAX(SAL) FROM EMP);
+B) 
+SELECT EMPNO, ENAME, SAL FROM EMP WHERE SAL = (SELECT MIN(SAL) FROM EMP);
+
+---------------------------------------------------------------
+Zadanie 6	
+SELECT
+	DEPTNO
+FROM
+	EMP
+HAVING
+	AVG(SAL) < (SELECT AVG(SAL) FROM EMP WHERE DEPTNO = 20)
+GROUP BY 
+	DEPTNO;
+
+---------------------------------------------------------------
+Zadanie 7
+select 
+	empno, ename
+FROM
+	EMP
+WEHRE 
+	DEPTNO IN (20,30)
+
+---------------------------------------------------------------
+Zadanie 8
+SELECT
+	ENAME, SAL, JOB, DEPTNO
+FROM
+	EMP
+WHERE
+	(SAL, DEPTNO) IN (SELECT MAX(SAL), DEPTNO FROM EMP GROUP BY DEPTNO);
+
+lub inaczej
+SELECT
+	ENAME, SAL, JOB, DEPTNO
+FROM
+	EMP e1
+WHERE
+	SAL = (SELECT MAX(SAL) FROM EMP e2 where e1.deptno = e2.deptno);
+
+---------------------------------------------------------------
+Zadanie 9
+SELECT DISTINCT SAL FROM EMP;	
+
+---------------------------------------------------------------
+Zadanie 10
+a) SELECT ENAME, SAL, DEPTNO FROM EMP WHERE SAL > ANY(SELECT DISTINCT SAL FROM EMP WHERE DEPTNO = 20) ORDER BY SAL DESC;
+
+b) SELECT ENAME, SAL, DEPTNO FROM EMP WHERE SAL > (SELECT MIN(SAL) FROM EMP WHERE DEPTNO = 20) ORDER BY SAL DESC;
+---------------------------------------------------------------
+Zadanie 11
+
+---------------------------------------------------------------
+Zadanie 12
+SELECT ENAME, SAL, DEPTNO FROM e1 WHERE SAL < (SELECT AVG(SAL) FROM EMP e2 WHERE e1.DEPTNO = e2.DEPTNO) ORDER BY DEPTNO;

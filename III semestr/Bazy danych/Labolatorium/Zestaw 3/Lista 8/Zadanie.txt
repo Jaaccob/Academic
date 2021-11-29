@@ -1,0 +1,103 @@
+Zadanie 1
+SELECT DEPTNO,DNAME FROM DEPT D1 WHERE NOT EXISTS (SELECT DEPTNO FROM EMP E1 WHERE E1.DEPTNO = D1.DEPTNO);
+
+--------------------------------------------------
+Zadanie 2
+SELECT
+	EMPNO, ENAME, JOB, SAL
+FROM
+	EMP
+CONNECT BY PRIOR
+	EMPNO = MGR
+START WITH 
+	MGR is null;
+
+--------------------------------------------------
+Zadanie 3
+a)
+SELECT ENAME, JOB, SAL, DEPTNO FROM EMP WHERE SAL = 1250 OR DEPTNO = 20 ORDER BY DEPTNO;
+b) UNION / INTERSECT / MINUS
+SELECT ENAME, JOB, SAL, DEPTNO FROM EMP WHERE SAL = 1250 UNION SELECT ENAME, JOB, SAL, DEPTNO FROM EMP WHERE DEPTNO =20 ORDER BY DEPTNO; 
+
+--------------------------------------------------
+Zadanie 4
+SELECT DNAME FROM DEPT UNION SELECT ENAME FROM EMP;
+
+--------------------------------------------------
+Zadanie 5
+a)
+SELECT ENAME, JOB, COMM FROM EMP WHERE JOB ='SALESMAN' AND (COMM IS NULL OR COMM = 0);
+b) 
+SELECT ENAME, JOB, COMM FROM EMP WHERE JOB ='SALESMAN' INTERSECT (SELECT ENAME, JOB, COMM FROM EMP WHERE COMM IS NULL UNION SELECT ENAME, JOB, COMM FROM EMP WHERE J COMM = 0);
+
+--------------------------------------------------
+Zadanie 6
+a) 
+SELECT ENAME, JOB, SAL, COMM FROM EMP WHERE JOB = 'CLERK' AND NOT DEPTNO = 10;
+b)
+SELECT ENAME, JOB, SAL, COMM FROM EMP WHERE JOB = 'CLERK' MINUS SELECT ENAME, JOB, SAL, COMM FROM EMP WHERE DEPTNO = 10;
+
+--------------------------------------------------
+Zadanie 7
+SELECT ENAME, NVL(COMM,0) FROM EMP;
+
+--------------------------------------------------
+Zadanie 8
+SELECT ENAME,DECODE(DEPTNO,10,'*',20,'**','?') FROM EMP;
+
+--------------------------------------------------
+Zadanie 9
+SELECT ENAME, SAL, DECODE(SIGN(SAL - 1500), 0 , 'ON TARGET', -1, 'BELOW 1500',SAL) FROM EMP;
+
+--------------------------------------------------
+Zadanie 10
+SELECT ENAME, ROUND(SAL * 1.15) FROM EMP;
+
+--------------------------------------------------
+Zadanie 11
+SELECT SYSDATE FROM DUAL;
+
+--------------------------------------------------
+Zadanie 12
+SELECT TO_CHAR(SYSDATE, 'HH/MI/SS') FROM DUAL;
+
+--------------------------------------------------
+Zadanie 13
+SELECT TO_CHAR(SYSDATE, 'DD.MM.YYYY') FROM DUAL;
+
+--------------------------------------------------
+Zadanie 14
+SELECT TO_CHAR(SYSDATE + 10 +(6/24),'DD.MM.YYYY HH24:MI:SS') FROM DUAL;
+
+--------------------------------------------------
+Zadanie 15
+x between a and b
+x >= a and a <= b
+a)
+SELECT EMPNO, ENAME, HIREDATE FROM EMP WHERE HIREDATE BEETWEEN TO_DATE('&S_DATE','DD.MM.YYYY') AND TO_DATE('&E_DATE','DD.MM.YYYY');
+
+b)
+SELECT EMPNO, ENAME, HIREDATE FROM EMP WHERE HIREDATE >= TO_DATE('&S_DATE','DD.MM.YYYY') AND HIREDATE <= TO_DATE('&E_DATE','DD.MM.YYYY');
+
+--------------------------------------------------
+Zadanie 16
+SELECT EMPNO, ENAME, JOB FROM EMP WHERE JOB = UPPER('&SELECTED_JOB');
+
+--------------------------------------------------
+Zadanie 17
+a)
+SELECT LTRIM(ENAME,'S') FROM EMP;
+b)
+SELECT RTRIM(ENAME,'S') FROM EMP;
+
+--------------------------------------------------
+Zadanie 18
+SELECT RPAD(ENAME,10,'_') FROM EMP;
+LPAD - Z LEWEJ DODAJE ZNAKI
+RPAD - Z PRAWEJ DODAJE ZNAKI
+
+--------------------------------------------------
+Zadanie 19
+instr - 
+substr - 
+SELECT ENAME, REPLACE(SUBSTR(ENAME,1,INSTR(ENAME'L')),'L','X') || SUBSTR(ENAME,INSTR(ENAME,'L')+1) FROM EMP; 

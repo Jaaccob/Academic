@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="FRIENDUSER" directorySegmentName="seg_0" id="55A7CE7D-0374-54FA-2D22-5375C384EDDB">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<schemaObject>70AC13ED-D76F-9947-6CFF-E0810ABD0B46</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="idUser" id="3CAE635A-15F6-9187-1B74-1090EEFCBA71">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="idUserFriend" id="77A74370-26CF-A63E-8430-FFAAC46C79A1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="FRIENDUSER__IDX" id="1744A92C-8BA0-5CBB-2E0A-BEF4B3137E1A">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<schemaObject>70AC13ED-D76F-9947-6CFF-E0810ABD0B46</schemaObject>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FRIENDUSER_USER_FKv1" id="94A04D3B-DAAC-55DD-29DD-36EB04DA94ED">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-21 11:57:44 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FRIENDUSER_USER_FK" id="A53DC6DB-1C20-4E57-3366-B34B4856BDA1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="FRIENDUSER_PKv1" id="A61BBEA9-C085-7238-B2B3-9BF6E9978910">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-21 12:15:41 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="FRIENDUSER_PK" id="F5892DA5-381F-A39F-09E4-DA6671460C04">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-21 12:15:41 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

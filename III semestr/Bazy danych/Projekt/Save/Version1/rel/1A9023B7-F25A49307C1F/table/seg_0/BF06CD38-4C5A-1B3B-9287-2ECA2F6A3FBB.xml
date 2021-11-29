@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BF06CD38-4C5A-1B3B-9287-2ECA2F6A3FBB" name="AwardGenre">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:04:22 UTC</createdTime>
+<generatorID>8388CCFB-772E-854E-5020-769C46F8C4AD</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idGenre" id="5D393D34-43CF-7912-121D-557F89B8FCC9">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:04:22 UTC</createdTime>
+<comment><![CDATA[idGenre oznacza jednoznacznie na daną kategorię w jakiej film uzyskał nagrode]]></comment>
+<commentInRDBMS><![CDATA[idGenre oznacza jednoznacznie na daną kategorię w jakiej film uzyskał nagrode]]></commentInRDBMS>
+<generatorID>8B76337B-79A3-F6B6-AE18-997B282A3BB2</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Description" id="AFFC8329-3B65-0475-FEAA-90F7DEEFECE0">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:04:22 UTC</createdTime>
+<comment><![CDATA[Dłuższy opis kategorii w jakiej film otrzymał nagrodę]]></comment>
+<commentInRDBMS><![CDATA[Dłuższy opis kategorii w jakiej film otrzymał nagrodę]]></commentInRDBMS>
+<generatorID>AF20D9C4-8592-EE1F-4C2E-D3E92CAC0BD7</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAF1F9BC-F606-227A-17A0-38B0DD07774D" name="AwardGenre_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:04:34 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D393D34-43CF-7912-121D-557F89B8FCC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93F00E0F-439E-BCAD-6B63-B02A55C4E693" name="AwardGenre__IDX">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:06:08 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D393D34-43CF-7912-121D-557F89B8FCC9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

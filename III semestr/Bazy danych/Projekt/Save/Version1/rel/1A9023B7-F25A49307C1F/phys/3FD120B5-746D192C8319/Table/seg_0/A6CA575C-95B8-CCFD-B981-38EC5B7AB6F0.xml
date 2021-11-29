@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="USERLOG" directorySegmentName="seg_0" id="A6CA575C-95B8-CCFD-B981-38EC5B7AB6F0">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="idUser" id="BA1F3926-231A-C0FD-1DFE-B69F1B8EC666">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="date" id="D8F5BE56-83B8-BAC1-EBE1-9A985E721F78">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="USERLOG__IDX" id="8B49F735-79FF-FBC8-A87C-3AC0543B0F14">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="USERLOG_PK" id="C88644BE-8202-E02E-2AC5-8F2EC1B840AF">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:15 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MOVEGENRE_GENRE_FK" directorySegmentName="seg_0" id="BE67B178-10B7-DDA4-7B2A-1C77D2BE0B64">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>DC0F38AE-665B-12A9-E6DC-DBADB254F0E2</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<sourcePk>7B7D66D4-1D0C-8960-FCD9-7DEEF7C870CA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>1B92DB0F-524C-D62B-DD29-FE1BD694918A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2C04FADF-7B1D-94BC-D4C6-9D3CC5B8005B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B31DAE4C-DDC5-9120-82F7-DDD509A339B6" name="COMMENT">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Tabela "COMMENTS" przechowuje  informacje o komentarzach zostawionych przez użytkowników pod filmami]]></comment>
+<generatorID>09D740FB-7046-03B1-0F9D-B744BA5D7633</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>comment</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="0CE722F0-2731-9CC5-9464-8596381CD942">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Id wskazujące jednoznacznie na konkretny komentarz użytkownia ]]></comment>
+<commentInRDBMS><![CDATA[Id wskazujące jednoznacznie na konkretny komentarz użytkownia ]]></commentInRDBMS>
+<generatorID>93DA0B87-6FA7-0F5A-5A4F-73CF0538EC84</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="mark" id="07C7C708-671F-624D-EAEE-02D9E1D806A3">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Ocena użytkownika w skali od 1 do 10]]></comment>
+<commentInRDBMS><![CDATA[Ocena użytkownika w skali od 1 do 10]]></commentInRDBMS>
+<generatorID>D85AEE07-79F1-0D6E-228D-2337A84E3B4F</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="D2986980-9726-4FF7-5411-3F5027EF33CF">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Opis słowny komentarza]]></comment>
+<commentInRDBMS><![CDATA[Opis słowny komentarza]]></commentInRDBMS>
+<generatorID>5EB13266-9617-2343-62A8-DEF0097F113D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="date" id="FB4DAE96-1C9E-4BA1-7731-1B5AB1CD7214">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<comment><![CDATA[Data wystawienia komentarza przez użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Data wystawienia komentarza przez użytkownika]]></commentInRDBMS>
+<generatorID>94306567-A2DD-4BD0-BBDC-522870B25AD8</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F8A2FAB0-BDF3-CEDB-CEE4-B27D93C909BD" name="COMMENT PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>33E461A2-5965-4939-7E28-1360FEFE8B2A</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0CE722F0-2731-9CC5-9464-8596381CD942</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

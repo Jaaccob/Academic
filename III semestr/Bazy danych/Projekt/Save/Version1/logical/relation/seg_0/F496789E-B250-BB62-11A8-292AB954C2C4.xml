@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AWARD_AwardGenre_FK" directorySegmentName="seg_0" id="F496789E-B250-BB62-11A8-292AB954C2C4">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>39402AB4-2FB2-0183-7A32-1C691B1209F2</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<sourcePk>CF09CDC9-7087-C280-9985-D3B66D9593AA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>87DC765B-6CDB-BD34-B976-302BB1F73409</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8B0237BE-F708-AA99-CFE7-2151108025B5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

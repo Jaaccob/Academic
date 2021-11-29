@@ -1,0 +1,44 @@
+Zadanie 1 
+CREATE TABLE PRACOWNICY (nr_prac NUMBER(4) CONSTRAINT PK_nr_prac PRIMARY KEY, nazwisko VARCHAR2(10), stanowisko VARCHAR2(10), szef NUMBER(4), data_zatrudnienia DATE, pensja NUMBER(7,2), prowizja NUMBER(7,2), nr_dzialu NUMBER(2));
+
+---------------------------------------------------
+Zadanie 2
+CREATE TABLE DZIALY(nr_dzialu, nazwa, lokalizacja) AS SELECT * FROM DEPT;
+
+---------------------------------------------------
+Zadanie 3
+ALTER TABLE DZIALY ADD CONSTRAINT PK_nr_dzialu PRIMARY KEY (nr_dzialu);
+ALTER TABLE PRACOWNICY ADD CONSTRAINT FK_nr_dzialu FOREIGN KEY (nr_dzialu) REFERENCES DZIALY;
+
+---------------------------------------------------
+Zadanie 4
+COMMENT ON TABLE PRACOWNICY IS 'To jest kopia tabeli EMP użytkownika SCOTT, która posiada polskie nazwy kolumn';	
+COMMENT ON TABLE DZIALY IS 'To jest kopia tabeli DEPT użytkownika SCOTT, która posiada polskie nazwy kolumn';
+
+---------------------------------------------------
+Zadanie 5
+ALTER TABLE DZIALY ADD maks_pensja NUMBER(7,2);
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3
+
+---------------------------------------------------
+Zadanie 3

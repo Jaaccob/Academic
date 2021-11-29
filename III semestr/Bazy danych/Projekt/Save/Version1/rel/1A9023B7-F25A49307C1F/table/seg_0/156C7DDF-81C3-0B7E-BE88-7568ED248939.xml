@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="156C7DDF-81C3-0B7E-BE88-7568ED248939" name="PERSON">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela "PERSON" zawiera informacje o twórcach(włączając w to aktorów) filmów]]></comment>
+<generatorID>51E21FDD-90F6-8200-7612-2FE15FCE15E5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>person</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="8B95A57B-0D74-8311-76EC-B871E59A230D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Id identyfikuje jednoznacznie konkretną osobę, która tworzyła w jakikolwiek stopniu film]]></comment>
+<commentInRDBMS><![CDATA[Id identyfikuje jednoznacznie konkretną osobę, która tworzyła w jakikolwiek stopniu film]]></commentInRDBMS>
+<generatorID>88BAED34-1DC6-6B87-2DA2-F9CF1C13A6EF</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="AA25506D-66C1-D4AB-1717-12C7F45A234B">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>47E06F33-D2A1-ED84-EBF9-26FBF3142146</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dateOfBirth" id="2675B00F-4118-7698-5602-02D944B2B878">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>25C89DBA-074B-207E-5EC7-497DE0DDF4C5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="photo" id="9ABECC40-487B-DFA0-0C40-773246ACEA60">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Zdjęcie osoby, która tworzyła film. Zdjęcie nie jest wymagane]]></comment>
+<commentInRDBMS><![CDATA[Zdjęcie osoby, która tworzyła film. Zdjęcie nie jest wymagane]]></commentInRDBMS>
+<generatorID>6A7DF582-3F3E-4FE4-EF70-B82A09A1E8C1</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C02864B1-2937-8842-33F9-ABDC706DBF92" name="PERSON_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:42:39 UTC</createdTime>
+<generatorID>3C1BB545-2DD4-C188-EA83-EF3C131D0480</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B95A57B-0D74-8311-76EC-B871E59A230D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EE90956F-B383-51A0-5089-8C4F45616BB8" name="PERSON__IDX">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:20:28 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B95A57B-0D74-8311-76EC-B871E59A230D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

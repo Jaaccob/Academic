@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="COMMENTMOVIE_USER_FK" directorySegmentName="seg_0" id="58CE911E-FEC5-86DE-72FA-2815D16CB02F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>32749545-9D92-9169-8FCC-3C158CC49E90</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<sourcePk>588800C0-F6A5-D31B-5623-2663E24B01C9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>4BE89F2A-F7B9-53B4-7217-BAA02786E841</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>912A594D-7A00-10EC-BC2B-5A6109488F5E</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

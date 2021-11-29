@@ -1,0 +1,10 @@
+CREATE OR REPLACE TRIGGER USERLOG_DATE_TRG BEFORE
+    INSERT ON "USERLOG"
+    FOR EACH ROW
+    DECLARE
+    data date;
+BEGIN
+    select sysdate into data from dual;
+    :new."date" := data;
+END;
+/

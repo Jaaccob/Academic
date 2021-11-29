@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AWARD_MOVIE_FK" directorySegmentName="seg_0" id="B7133A14-2751-A5B7-18B0-8A60A2D7917D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>61E6259B-A27F-B093-BC0A-0ABC142B3211</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<sourcePk>8156A982-E57A-CE0C-A556-A27B1C1319FF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>83E2E355-1853-2DAD-C3C9-3F0C98C3623C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8B0237BE-F708-AA99-CFE7-2151108025B5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

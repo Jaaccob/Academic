@@ -1,0 +1,119 @@
+Karta_pracownika = {Imię, Drugie_imię, Nazwisko, PESEL, Id_pracownika, Id_oddziału,Nazwa_oddziału, Adres_oddziału, Email_oddziału, Nr_tel_oddziału, NIP, Data_urodzenia, Miejsce_urodzenia, Państwo_urodzenia,Imię_ojca, Imię_matki, Adres_zamieszkania, Adres_korespondencyjny, Email_służbowy_pracownika, Nr_tel_służbowego_pracownika, Nr_tel_prywatnego_pracownika, Id_stanowiska, Stanowisko, Id_zawodu, Zawód, Id_wykształcenia, Wykształcenie, Id_tytułu_zawodowego, Tytul_zawodowy, Id_stopnia_naukowego, Stopien_naukowy, Id_tytułu_naukowego, Tytul_naukowy, Data_zatrudnienia, Data_zwolnienia, Kwota_wynagrodzenia, Lp_wypłaty, Dzień_wypłaty, Tydzień_wypłaty, Miesiąc_wypłaty, Rok_wypłaty, Id_rodzaju_wynagrodzenia, Rodzaj_wynagrodzenia }
+
+
+PK(Karta_pracownika) = {Id_pracownika, Id_oddziału, Id_zawodu, Lp_wypłaty}
+//2 Postać Normalna (2NF)
+
+Id_zawodu -> Zawód
+N(KP1) = {Id_zawodu, Zawód}
+PK(KP1) = {Id_zawodu}
+----------------------------------
+Id_oddziału -> Adres_oddziału
+Id_oddziału -> Email_oddziału
+Id_oddziału -> Nr_tel_oddziału
+N(KP2) = {Id_oddziału, Adres_oddziału, Email_oddziału, Nr_tel_oddziału}
+PK(KP2) = {Id_oddziału}
+----------------------------------
+{Id_pracownika, Id_oddziału} -> Imię
+{Id_pracownika, Id_oddziału} -> Drugie_imię
+{Id_pracownika, Id_oddziału} -> Nazwisko
+{Id_pracownika, Id_oddziału} -> PESEL
+{Id_pracownika, Id_oddziału} -> Data_urodzenia
+{Id_pracownika, Id_oddziału} -> Miejsce_urodzenia
+{Id_pracownika, Id_oddziału} -> Państwo_urodzenia
+{Id_pracownika, Id_oddziału} -> Imię_ojca
+{Id_pracownika, Id_oddziału} -> Imię_matki
+{Id_pracownika, Id_oddziału} -> Adres_zamieszkania
+{Id_pracownika, Id_oddziału} -> Adres_korespondencyjny
+{Id_pracownika, Id_oddziału} -> Email_służbowy_pracownika
+{Id_pracownika, Id_oddziału} -> Nr_tel_służbowego_pracownika
+{Id_pracownika, Id_oddziału} -> Nr_tel_prywatnego_pracownika
+{Id_pracownika, Id_oddziału} -> Id_stanowiska
+{Id_pracownika, Id_oddziału} -> Stanowisko
+{Id_pracownika, Id_oddziału} -> Data_zatrudnienia
+{Id_pracownika, Id_oddziału} -> Data_zwolnienia
+{Id_pracownika, Id_oddziału} -> NIP
+N(KP3) = {Id_pracownika, Id_oddziału, Imię, Drugie_imię, Nazwisko, PESEL, Data_urodzenia, Miejsce_urodzenia, Państwo_urodzenia, Imię_ojca, Imię_matki, Adres_zamieszkania, Adres_korespondencyjny, Email_służbowy_pracownika, Nr_tel_służbowego_pracownika, Nr_tel_prywatnego_pracownika, Id_stanowiska, Stanowisko, Data_zatrudnienia, Data_zwolnienia, NIP}
+PK(KP3) = {Id_pracownika, Id_oddziału}
+----------------------------------
+{Id_pracownika, Id_oddziału,Lp_wypłaty} -> Kwota_wynagrodzenia
+N(KP4) = {Id_pracownika, Id_oddziału,Lp_wypłaty, Kwota_wynagrodzenia}
+PK(KP4) = {Id_pracownika, Id_oddziału,Lp_wypłaty}
+----------------------------------
+{Id_oddziału Lp_wypłaty} -> Dzień_wypłaty
+{Id_oddziału Lp_wypłaty} -> Tydzień_wypłaty
+{Id_oddziału Lp_wypłaty} -> Miesiąc_wypłaty
+{Id_oddziału Lp_wypłaty} -> Rok_wypłaty
+{Id_oddziału Lp_wypłaty} -> Id_rodzaju_wynagrodzenia
+{Id_oddziału Lp_wypłaty} -> Rodzaj_wynagrodzenia
+N(KP5) = {Id_oddziału, Lp_wypłaty, Dzień_wypłaty, Tydzień_wypłaty, Miesiąc_wypłaty, Rok_wypłaty, Id_rodzaju_wynagrodzenia, Id_rodzaju_wynagrodzenia, Rodzaj_wynagrodzenia}
+PK(KP5) = {Id_oddziału, Lp_wypłaty}
+----------------------------------
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Id_wykształcenia
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Wykształcenie
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Id_tytułu_zawodowego
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Tytul_zawodowy
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Id_stopnia_naukowego
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Stopien_naukowy
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Id_tytułu_naukowego
+{Id_pracownika, Id_oddziału, Id_zawodu} -> Tytul_naukowy
+N(KP6) = {Id_pracownika, Id_oddziału, Id_zawodu, Id_wykształcenia, Wykształcenie, Id_tytułu_zawodowego, Tytul_zawodowy, Id_stopnia_naukowego, Stopien_naukowy, Id_tytułu_naukowego, Tytul_naukowy}
+PK(KP6) = {Id_pracownika, Id_oddziału, Id_zawodu}
+----------------------------------
+//////////////////////////////////
+//3 Postać Normalna (3NF)
+N(KP1) = {Id_zawodu, Zawód}
+PK(KP1) = {Id_zawodu}
+----------------------------------
+N(KP2) = {Id_oddziału, Adres_oddziału, Email_oddziału, Nr_tel_oddziału}
+PK(KP2) = {Id_oddziału}
+----------------------------------
+N(KP3.1) = {Id_pracownika, Id_oddziału, Imię, Drugie_imię, Nazwisko, PESEL, Data_urodzenia, Miejsce_urodzenia, Państwo_urodzenia, Imię_ojca, Imię_matki, Adres_zamieszkania, Adres_korespondencyjny, Email_służbowy_pracownika, Nr_tel_służbowego_pracownika, Nr_tel_prywatnego_pracownika, Id_stanowiska, Data_zatrudnienia, Data_zwolnienia, NIP}
+PK(KP3.1) = {Id_pracownika, Id_oddziału}
+FK1(KP3.1) = {Id_stanowiska} -> PK(KP3.2)
+FK2(KP3.1) = {Id_oddziału} -> PK(KP2)
+----------------------------------
+Id_stanowiska -> Stanowisko
+N(KP3.2) = {Id_stanowiska, Stanowisko}
+PK(KP3.2) = {Id_stanowiska}
+----------------------------------
+N(KP4) = {Id_pracownika, Id_oddziału,Lp_wypłaty, Kwota_wynagrodzenia}
+PK(KP4) = {Id_pracownika, Id_oddziału,Lp_wypłaty}
+FK1(KP4) = {Id_oddziału} -> PK(KP2)
+FK2(KP4) = {Id_oddziału, Lp_wypłaty} -> PK(KP5.1)
+----------------------------------
+N(KP5.1) = {Id_oddziału, Lp_wypłaty, Dzień_wypłaty, Tydzień_wypłaty, Miesiąc_wypłaty, Rok_wypłaty, Id_rodzaju_wynagrodzenia, Id_rodzaju_wynagrodzenia}
+PK(KP5.1) = {Id_oddziału, Lp_wypłaty}
+FK(KP5.1) = {Id_rodzaju_wynagrodzenia} -> PK(KP5.2)
+----------------------------------
+Id_rodzaju_wynagrodzenia -> Rodzaj_wynagrodzenia
+N(KP5.2) = {Id_rodzaju_wynagrodzenia, Rodzaj_wynagrodzenia}
+PK(KP5.2) = {Id_rodzaju_wynagrodzenia}
+----------------------------------
+Id_wykształcenia -> Wykształcenie
+Id_tytułu_zawodowego -> Tytul_zawodowy
+Id_stopnia_naukowego -> Stopien_naukowy
+Id_tytułu_naukowego -> Tytul_naukowy
+N(KP6.1) = {Id_pracownika, Id_oddziału, Id_zawodu, Id_wykształcenia, Id_tytułu_zawodowego, Id_stopnia_naukowego, Id_tytułu_naukowego}
+PK(KP6.1) = {Id_pracownika, Id_oddziału, Id_zawodu}
+FK1(KP6.1) = {Id_wykształcenia} -> PK(KP6.2)
+FK2(KP6.1) = {Id_tytułu_zawodowego} -> PK(KP6.3)
+FK3(KP6.1) = {Id_stopnia_naukowego} -> PK(KP6.4)
+FK4(KP6.1) = {Id_tytułu_naukowego} -> PK(KP6.5)
+FK5(KP6.1) = {Id_oddziału} -> PK(KP2)
+FK6(KP6.1) = {Id_zawodu} -> PK(KP1)
+FK7(KP6.1) = {Id_pracownika, Id_oddziału} -> PK(KP3.1)
+----------------------------------
+N(KP6.2) = {Id_wykształcenia, Wykształcenie}
+PK(KP6.2) = {Id_wykształcenia}
+----------------------------------
+N(KP6.3) = {Id_tytułu_zawodowego, Tytul_zawodowy}
+PK(KP6.3) = {Id_tytułu_zawodowego}
+----------------------------------
+N(KP6.4) = {Id_stopnia_naukowego, Stopien_naukowy}
+PK(KP6.4) = {Id_stopnia_naukowego}
+----------------------------------
+N(KP6.5) = {Id_tytułu_naukowego, Tytul_naukowy}
+PK(KP6.5) = {Id_tytułu_naukowego}
+
+

@@ -1,0 +1,39 @@
+Zadanie 13
+a)
+klucze kandydujące : 
+			KK1(T1) = {A}
+			KK2(T1) = {B}
+			KK3(T1) = {C,D}
+b) 
+klucze kandydujące : 
+			KK1(T2) = {A}
+			KK2(T2) = {B,C,E}
+
+
+Zadanie 14
+
+Pi_{A}(T1) x Pi_{B}(T1) x Pi_{C}(T1) x Pi{D}(T1)
+|Pi_{A}(T1) x Pi_{B}(T1) x Pi_{C}(T1) x Pi{D}(T1)| = |Pi_{A}(T1)| * |Pi_{B}(T1)| * |Pi_{C}(T1)| * |Pi{D}(T1)| = 4 * 4 * 2 * 2 = 64 * 2 kB = 128 kB
+
+m - krotka 
+m atrybutów 
+
+|Ai| = n
+|A1 x A2 x ... x Am| = |A1| * |A2| * ... * |Am| = n * n * ... * n = n ^ m
+m = 4
+2kB * n^4 <= 1GB 
+2kB * n^4 <= 2^20 kB
+n^4 <= 2^19
+n <= 2^(19/4)
+
+
+
+
+
+Zadanie 15
+ABONENCI S={nazwa, PESEL, ulica, miasto, kod, nrtelefonu}
+
+KK1 = {Pesel, nrtelefonu}
+KK2 = {Pesel, ulica, miasto, kod}
+KK3 = {nazwa, nrtelefonu}
+KK4 = {nazwa, ulica, miasto, kod}

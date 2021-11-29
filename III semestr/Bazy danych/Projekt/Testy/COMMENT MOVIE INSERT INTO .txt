@@ -1,0 +1,39 @@
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Reżyser');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Producent');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Operator obrazu');INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Montażysta');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Kolorysta');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Scenarzysta');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Scenograf');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Aktor filmowy');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Realizator dźwięku');
+INSERT INTO CREATORMOVIE
+(job)
+VALUES
+('Oświetlacz');

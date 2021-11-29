@@ -1,0 +1,178 @@
+INSERT INTO AWARD
+VALUES
+(6,97,'Oscar - Najlepsza piosenka- "Im Standing with You", wyk. Chrissy Metz',TO_DATE('2020','yyyy'),'NOMINACJE OSCARY',0);
+INSERT INTO AWARD
+VALUES
+(7,97,'Oscar - Najlepsza piosenka- "Im Standing with You", wyk. Chrissy Metz',TO_DATE('2020','yyyy'),'NOMINACJE OSCARY',0);
+INSERT INTO AWARD
+VALUES
+(6,97,'Critics Choice - Najlepsza piosenka- "Im Standing with You", wyk. Chrissy Metz',TO_DATE('2020','yyyy'),'NOMINACJE CRITICS CHOICE',0);
+INSERT INTO AWARD
+VALUES
+(7,97,'Critics Choice - Najlepsza piosenka- "Im Standing with You", wyk. Chrissy Metz',TO_DATE('2020','yyyy'),'NOMINACJE CRITICS CHOICE',0);
+--niepoprawny
+INSERT INTO AWARD
+VALUES
+(6,null,'Teen Choice - Ulubiony dramat kinowy',TO_DATE('2020','yyyy'),'NOMINACJE TEEN CHOICE',0);
+--niepoprawny
+INSERT INTO AWARD
+VALUES
+(7,null,'Teen Choice - Ulubiony dramat kinowy',TO_DATE('2020','yyyy'),'NOMINACJE TEEN CHOICE',0);
+INSERT INTO AWARD
+VALUES
+(6,97,'Teen Choice - Ulubiona aktorka dramatuChrissy Metz',TO_DATE('2019','yyyy'),'NOMINACJE CRITICS CHOICE',0);
+INSERT INTO AWARD
+VALUES
+(7,97,'Teen Choice - Ulubiona aktorka dramatuChrissy Metz',TO_DATE('2019','yyyy'),'NOMINACJE CRITICS CHOICE',0);
+
+INSERT INTO AWARD
+VALUES
+(8,NULL,'Europejska Nagroda Filmowa (od 1997) - Najlepsze europejskie efekty specjalne',TO_DATE('2020','YYYY'),'WYGRANE EUROPEJSKA AKADEMIA FILMOWA',1);
+
+INSERT INTO AWARD
+VALUES
+(8,NULL,'Goya - Najlepsze efekty specjalne- Mario Campoy i Iñaki Madariaga',TO_DATE('2020','YYYY'),'WYGRANE GOYA',1);
+
+INSERT INTO AWARD
+VALUES
+(8,132,'Goya - Najlepszy scenariusz oryginalnyDavid Desola, Pedro Rivero',TO_DATE('2020','YYYY'),'NOMINACJE GOYA',0);
+
+INSERT INTO AWARD
+VALUES
+(8,478,'Goya - Najlepszy scenariusz oryginalnyDavid Desola, Pedro Rivero',TO_DATE('2020','YYYY'),'NOMINACJE GOYA',0);
+
+INSERT INTO AWARD
+VALUES
+(8,201,'Goya - Najlepszy debiut reżyserskiGalder Gaztelu-Urrutia',TO_DATE('2020','YYYY'),'NOMINACJE GOYA',0);
+
+INSERT INTO AWARD
+VALUES
+(8,201,'Nagroda Publiczności - Najlepszy film - w sekcji "Szaleństwo Północy" ("Midnight Madness")Galder Gaztelu-Urrutia',TO_DATE('2019','YYYY'),'WYGRANE MFF W TORONTO',1);
+
+INSERT INTO AWARD
+VALUES
+(9,null,'Oscar - Najlepsza piosenka- "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(10,null,'Oscar - Najlepsza piosenka- "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(9,589,'Złoty Glob - Najlepszy aktor w komedii lub musicalu Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(10,589,'Złoty Glob - Najlepszy aktor w komedii lub musicalu Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(9,null,'Złoty Glob - Najlepsza piosenka- "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(10,null,'Złoty Glob - Najlepsza piosenka- "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',TO_DATE('2020','YYYY'),'WYGRANE (1) OSCARY',1);
+
+INSERT INTO AWARD
+VALUES
+(9,null,'Złoty Glob - Najlepsza komedia lub musical',TO_DATE('2020','YYYY'),'NOMINACJE (1) ZŁOTE GLOBY',1);
+
+INSERT INTO AWARD
+VALUES
+(10,null,'Złoty Glob - Najlepsza komedia lub musical',TO_DATE('2020','YYYY'),'NOMINACJE (1) ZŁOTE GLOBY',1);
+
+INSERT INTO AWARD
+VALUES
+(9,1,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,1,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,134,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,134,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,140,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,140,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,156,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,156,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,353,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,353,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,406,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,406,'BAFTA - Najlepszy film brytyjski Adam Bohling, David Furnish, David Reid, Dexter Fletcher, Lee Hall, Matthew Vaughn',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,589,'BAFTA - Najlepszy aktor pierwszoplanowy Taron Egerton',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,589,'BAFTA - Najlepszy aktor pierwszoplanowy Taron Egerton',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,null,'BAFTA - Najlepsza charakteryzacja i fryzury- Elizabeth Yianni-Georgiou',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,null,'BAFTA - Najlepsza charakteryzacja i fryzury- Elizabeth Yianni-Georgiou',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,125,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,125,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,289,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,289,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,401,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,401,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(9,433,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);
+
+INSERT INTO AWARD
+VALUES
+(10,433,'BAFTA - Najlepszy dźwięk Danny Sheehan, John Hayes, Matthew Collinge, Mike Prestwood Smith',TO_DATE('2020','YYYY'),'NOMINACJE (4) BAFTA',0);

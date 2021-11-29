@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="39402AB4-2FB2-0183-7A32-1C691B1209F2" containerWithKeyObject="02E36E4B-4832-DED9-4565-95B0870B9941" localFKIndex="93AB9C8B-7962-A259-50DF-6F25920734A5" name="AWARD_AwardGenre_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:05:54 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<referredTableLongName>AwardGenre</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>BF06CD38-4C5A-1B3B-9287-2ECA2F6A3FBB</referredTableID>
+<keyObject>EAF1F9BC-F606-227A-17A0-38B0DD07774D</keyObject>
+<referredKeyID>EAF1F9BC-F606-227A-17A0-38B0DD07774D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>idGenre</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

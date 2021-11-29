@@ -1,0 +1,288 @@
+Klienci - PK = {kid}
+Agenci - PK = {aid}
+Produkty - PK = {pid}
+Zamówienia - PK = {zid}
+	FK1 = {kid}
+	FK2 = {aid}
+	FK3 = {pid}
+
+
+
+
+Zadanie 3
+SELECT
+	pid
+FROM
+	PRODUKTY P
+MINUS
+Select 
+	pid
+FROM
+	KLIENCI K,ZAMÓWIENIA Z,AGENCI A
+WHERE
+	KLIENCI.kid = ZAMÓWIENIA.kid 
+	AND
+	AGENCI.aid = ZAMÓWIENIA.aid
+	AND
+	AGENCI.amiasto = 'Gliwice'
+	AND
+	KLIENCI.kmiasto = 'KATOWICE';
+
+pi_{pid}(P) MINUS pi_{pid}(sigma_{K.kid = Z.kid AND A.aid = Z.aid AND A.amiasto = 'Gliwice' AND K.kmiasto = 'Katowice'}(K x Z x A)) 
+
+SELECT 
+	pid
+FROM
+	PRODUKTY P
+MINUS
+SELECT
+	pid
+FROM
+	K NATURAL JOIN Z NATURAL JOIN A
+WHERE
+	A.amiasto = 'Gliwice'
+	AND
+	K.kmiasto = 'Katowice';
+
+pi_{pid}(P) MINUS pi_{pid}(sigma_{A.amiasto = 'Gliwice' AND K.kmiasto = 'Katowice'}(K |x| Z |x| A)) 
+
+Zadanie 4
+
+p1 = pi_{pid}(sigma_{pcena = 50}(P))
+
+SELECT 
+	pid
+FROM
+	PRODUKTY P 
+WHERE
+	pcena = 50;
+
+p2 = pi_{kid,pid}(Z)
+w = pi_{knazwa}((p2/p1) |x| K)
+
+
+Zadanie 5
+
+P1 = pi_{pid}(sigma_{kid = 'c04'}(Z))
+W1 = pi_{aid, pid}(Z) / P1
+
+P2 = pi_{pid}(W1 |x| Z)
+P3 = P2 MINUS P1
+A2 = pi_{aid}(Z |x| P3)
+W2 = W1 MINUS A2
+
+Zadanie 6
+pi_{kid, pid}(Z) / pi{pid}(sigma_{pid = 'p01' or pid = 'p07'}(P))
+
+Z1 =  pi_{kid}(sigma_{pid = 'p01'}(Z))
+Z2 =  pi_{kid}(sigma_{pid = 'p07'}(Z))
+k = Z1 intersect Z2
+w = pi_{kid, pid}(Z) / k
+
+SELECT
+	kid
+FROM
+	ZAMOWIENIA Z
+WHERE
+	kid = 'p01'
+INTERSECT
+SELECT
+	kid
+FROM
+	ZAMOWIENIA Z
+WHERE
+	kid = 'p07'
+
+
+//Znaleźć identyfikatory klientów, którzy w 1 zamówienia zamawiali produkty p01 i p07
+
+Z1 =  pi_{kid, zid}(sigma_{pid = 'p01'}(Z))
+Z2 =  pi_{kid, zid}(sigma_{pid = 'p07'}(Z))
+k = pi_{kid}(Z1 intersect Z2)
+
+Zadanie 7
+
+1. A1 = pi_{aid}(sigma_{pid = 'p03'}(Z))
+2. pi_{kid}(sigma_{Z.aid = A1.aid}(Z x A1))
+2. pi_{kid}(Z |x| A1)
+
+SELECT
+	kid
+FROM
+	ZAMÓWIENIA Z , 
+	(
+		SELECT
+			aid
+		FROM
+			ZAMÓWIENIA Z
+		WHERE
+			pid = 'p03'
+	) A1
+WHERE
+	Z.aid = A1.aid
+	
+
+Zadanie 8 
+
+k1 = pi_{krabat}(sigma_{kmiasto = 'Katowice' OR kmiasto = 'Gliwice'}(K))
+
+
+pi_{kid}(K |x| k1)
+
+
+Zadanie 9 
+
+
+A1 = pi_{aid}(sigma_{kid = 'c07'}(Z))
+K1 = pi_{kid}(Z |x| A1)
+A2 = pi_{aid}(A |x| K1)
+W = pi_{pid}(Z |x| A2)
+
+Zadanie 10 
+
+K1 = pi_{kid}(sigma_{kmiasto >= 'R' AND kmiasto < 'S'}(K))
+p1 = pi_{pid}(K1 |x| Z)
+pi_{pid}(P) - p1
+
+
+Zadanie 11
+pi_{zid, pid}(sigma{zilość >= 1000}(Z))
+
+Zadanie 12
+pi_{knazwa, zid}(sigma_{zcena < 500}(Z |x| K))
+
+Zadanie 13
+pi_{zid, knazwa, anazwa}(sigma_{zmiesiac = 'wrzesien'} ( Z |x| K |x| A))
+SELECT
+	zid, knazwa, anazwa
+FROM
+	Z NATURAL JOIN K NATURAL JOIN A
+WHERE
+	Z.zmiesiac = 'wrzesien';	 
+
+Zadanie 14
+pi_{pnazwa}(sigma_{zmiesiac = 'pazdziernik' and pmiasto = 'Katowice'}(Z |x| P))
+Select
+	pnazwa
+FROM
+	ZAMÓWIENIA Z NATURAL JOIN PRODUKTY P
+WHERE
+	zmiesiac = 'pazdziernik'
+	AND
+	pmiasto = 'Katowice'
+
+
+Zadanie 15
+pi_{kid, aid, pid}(sigma_{K.kmiasto = A.amiasto and K.kmiasto = P.pmiasto}(K x A x P))
+
+
+Zadanie 16
+pi_{kid, aid, pid}(sigma{K.kmiasto != A.amiasto or K.kmiasto != P.pmiasto or A.miasto != P.pmiasto}(K x A x P))
+
+Zadanie17
+pi_{kid, aid, pid}(sigma{K.kmiasto != A.amiasto and K.kmiasto != P.pmiasto and A.miasto != P.pmiasto}(K x A x P))
+
+Zadanie 18
+pi_{amiasto}(sigma_{kid = 'k07'}(Z |x| A))
+SELECT
+	amiasto
+FROM
+	ZAMÓWIENIA Z NATURAL JOIN AGENCI A
+WHERE
+	Z.kid = 'k07';
+
+Zadanie 19
+pi_{pnazwa}(sigma{K.kmiasto = 'Gliwice' and A.amiasto = 'Katowice'}(A |x| P |x| K |x| Z))
+
+Zadanie 20
+A1 = A
+A2 = A
+pi_{A1.aid, A2.aid}(sigma_{A1.amiasto = A2.amiasto and A1.aid > A2.aid}(A1 x A2))
+
+A1.aid 		A2.aid
+a01		a01
+a02		a02
+a01		a02	+
+a02		a01	++
+
+SELECT
+	A1.aid, A2.aid
+FROM
+	A A1, A A2
+WHERE
+	A1.amiasto = A2.amiasto and A1.aid > A2.aid
+
+Zadanie 21
+a)
+SELECT
+	kid
+FROM
+	Klienci
+WHERE
+	krabat = (SELECT
+			MAX(krabat)
+		FROM
+			Klienci);
+b)
+SELECT
+	kid
+FROM
+	Klienci
+WHERE
+	krabat = (SELECT
+			MIN(krabat)
+		FROM
+			Klienci);
+
+Zadanie 22
+p1 = pi_{pid}(sigma{aid = 'a07'}(Z))
+p2 = pi_{pid}(sigma{aid = 'a01'}(Z))
+w = p1 minus p2
+
+SELECT
+	pid
+FROM
+	ZAMÓWIENIA Z
+WHERE
+	aid = 'a07'
+MINUS
+SELECT
+	pid
+FROM
+	ZAMÓWIENIA Z
+WHERE
+	aid = 'a01'
+
+Zadanie 23
+A1 = pi_{aid, anazwa}(sigma_{A.anazwa >='N' AND A.anazwa < 'M' }(A))
+P1 = pi{pid}(sigma_{P.pmiasto = 'Myslowice'}(P))
+A2 = pi_{aid, anazwa}(Z |x| P1 |x| A)
+W = A1 minus A2
+
+Zadanie 24
+P1 = pi_{pid}(sigma_{kid = 'k02'}(Z))
+A1 = pi_{aid, pid}(Z) / P1
+W = pi_{anazwa}(A1 |x| AGENCI)
+
+Zadanie 25
+pi_{kid, aid, pid}(sigma{K.kmiasto != A.amiasto or K.kmiasto != P.pmiasto or A.miasto != P.pmiasto}(K x A x P))
+pi_{kid, aid, pid}(K x A x P) minus pi_{kid, aid, pid}(sigma_{K.kmiasto = A.amiasto and K.kmiasto = P.pmiasto}(K x A x P))
+
+Zadanie 26
+K1 = pi{kid}(sigma_{kmiasto = 'Gliwice'}(K))
+pi_{aid}(sigma_{zcena > 10000}(Z |x| K1))
+
+pi_{aid}(sigma_{zcena > 10000 and K.kmiasto = 'Gliwice'}(Z |x| K))
+
+
+
+Wypisz nazwy i miasta produktów, które nie były kupowane przez klientów z Warszawy i Katowic ale były sprowadzone przez agentów, pochodzących z tych miast
+
+A1 = pi_{aid}(sigma_{A.amiastio = 'Warszawa' OR A.amiasto = 'Katowice'}(A))
+K1 = pi_{kid}(sigma_{K.kmiasto = 'Warszawa' OR K.kmiasto = 'Katowice'}(K))
+P1 = pi_{pid}(A1 |x| Z)
+P2 = pi_{pid}(K1 |x| Z)
+P3 = P2 MINUS P1
+W = pi_{pnazwy, pmiasta}(P3 |x| P)
+
+

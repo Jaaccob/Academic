@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A27A656-FDC2-406C-82D5-6841C4551A59" name="MOVIE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>F05F2DF2-5F6E-6DE8-144A-CCF49894F061</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>movie</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1AC09832-AF2A-4015-9458-EA8467732613">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Id filmu przypisywana automatycznie przez wyzwalacz ]]></comment>
+<commentInRDBMS><![CDATA[Id filmu przypisywana automatycznie przez wyzwalacz ]]></commentInRDBMS>
+<generatorID>37C9CA0A-3B67-FA30-A198-D5240CEDB0F4</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="title" id="4A5D72F0-12E1-5A5D-5D40-196C0080610B">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tytuł filmu]]></comment>
+<commentInRDBMS><![CDATA[Tytuł filmu]]></commentInRDBMS>
+<generatorID>339AEA15-99DC-50DE-78E9-9303B2808AC1</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="relaseDate" id="9B7502B7-3F6D-19E3-C464-EDA4DCE5006F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Data wypuszczenia filmu do kin]]></comment>
+<commentInRDBMS><![CDATA[Data wypuszczenia filmu do kin]]></commentInRDBMS>
+<generatorID>2DDB2E1A-A874-0E94-7E79-15E3B5AD6FCE</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="E6858756-D65B-793F-0965-539DE63498C3">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Opis filmu]]></comment>
+<commentInRDBMS><![CDATA[Opis filmu]]></commentInRDBMS>
+<generatorID>2FC790E6-1EDC-32F3-078D-E52402D002C9</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000</dataTypeSize>
+<ownDataTypeParameters>1000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="length" id="C1CE0BED-61D8-48F1-082F-D093B3FF4944">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Długość filmu w minutach]]></comment>
+<commentInRDBMS><![CDATA[Długość filmu w minutach]]></commentInRDBMS>
+<generatorID>06714C01-F474-7EBA-D647-008D2E49C7CE</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,11,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mark" id="28F9AF90-5525-3918-F5E7-62790E37CED5">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Ocena filmu pobierana z zewnętrznej aplikacji]]></comment>
+<commentInRDBMS><![CDATA[Ocena filmu pobierana z zewnętrznej aplikacji]]></commentInRDBMS>
+<generatorID>1E49C107-613A-FE40-B252-BA0662166A86</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,3,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="poster" id="5E2ECD7A-94E9-C78D-80FE-8CB8873CEA3E">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Plakat filmu]]></comment>
+<commentInRDBMS><![CDATA[Plakat filmu]]></commentInRDBMS>
+<generatorID>5390D3B3-B59F-72F7-4C9C-CB8A839D7C90</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT010</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9BE1784C-7808-7D2A-0ACA-61667F11BBDE" name="MOVIE_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:37:33 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="89DB56E3-D234-8690-25ED-905BB659041B" name="MOVIE__IDXv1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:22:31 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AWARD_PERSON_FK" directorySegmentName="seg_0" id="2673CA1E-8DAC-CAA9-4E03-D5EF71EFC10D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>E622B3A6-0E46-6C39-A083-DEF1E236BF3A</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<targetTransferable>false</targetTransferable>
+<sourcePk>CBA7377B-D725-DF38-571C-CEDA0FCE6553</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>AE00D929-5348-6D47-3962-9B8F83F98B2C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>8B0237BE-F708-AA99-CFE7-2151108025B5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

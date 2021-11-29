@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09D740FB-7046-03B1-0F9D-B744BA5D7633" name="COMMENT">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela "COMMENTS" przechowuje  informacje o komentarzach zostawionych przez użytkowników pod filmami]]></comment>
+<generatorID>3223AEEC-E76B-191F-F282-4B3EA88674B5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>comment</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="93DA0B87-6FA7-0F5A-5A4F-73CF0538EC84">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Id wskazujące jednoznacznie na konkretny komentarz użytkownia ]]></comment>
+<commentInRDBMS><![CDATA[Id wskazujące jednoznacznie na konkretny komentarz użytkownia ]]></commentInRDBMS>
+<generatorID>9612E361-97AF-4D76-7AEF-D0BA80281196</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="mark" id="D85AEE07-79F1-0D6E-228D-2337A84E3B4F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Ocena użytkownika w skali od 1 do 10]]></comment>
+<commentInRDBMS><![CDATA[Ocena użytkownika w skali od 1 do 10]]></commentInRDBMS>
+<generatorID>89DB97D1-4FA7-67BA-B72D-B85DF6F263E7</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="5EB13266-9617-2343-62A8-DEF0097F113D">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Opis słowny komentarza]]></comment>
+<commentInRDBMS><![CDATA[Opis słowny komentarza]]></commentInRDBMS>
+<generatorID>8CD6D0C3-3091-BB6E-702C-572CF6E1EC4A</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="94306567-A2DD-4BD0-BBDC-522870B25AD8">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Data wystawienia komentarza przez użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Data wystawienia komentarza przez użytkownika]]></commentInRDBMS>
+<generatorID>EA0226DE-14D1-AC89-C8FF-E3A33B87390B</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="33E461A2-5965-4939-7E28-1360FEFE8B2A" name="COMMENT_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:31:28 UTC</createdTime>
+<generatorID>5CADD9BC-116D-7A6E-F25E-59E33C442963</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93DA0B87-6FA7-0F5A-5A4F-73CF0538EC84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DAA26342-5908-996F-38FB-33930CB093AE" name="COMMENT__IDXv1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:21:03 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="93DA0B87-6FA7-0F5A-5A4F-73CF0538EC84"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

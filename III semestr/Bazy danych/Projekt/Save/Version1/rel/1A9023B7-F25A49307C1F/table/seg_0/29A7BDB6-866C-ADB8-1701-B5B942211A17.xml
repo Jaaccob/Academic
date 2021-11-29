@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="29A7BDB6-866C-ADB8-1701-B5B942211A17" name="CREATOR">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela "CREATOR" zawiera informacje o twórcach filmu jak i ich wkładzie do stworzenia filmu]]></comment>
+<generatorID>BCBA3427-AF53-2469-7C73-A7E88AF0DA33</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>creator</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MOVIE_id" id="58247870-9A1B-3706-2C34-40F01DD896E5">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>8F80F7B5-A1D8-B6A0-4F03-240ECE075994</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="11B2FA43-BCFD-CA12-4C74-6BDD427CCF00" referredColumn="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</associations>
+</Column>
+<Column name="PERSON_id" id="BB89A287-F4B1-6C25-6A87-6263AB5AA19F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>70610376-2110-A5D6-4E08-497445D1A889</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="45EFF608-B2C4-62B0-9D42-617D9E4CD34A" referredColumn="8B95A57B-0D74-8311-76EC-B871E59A230D"/>
+</associations>
+</Column>
+<Column name="CREATORMOVIE_id" id="92979755-8AB5-24D4-53F2-58A432DD1C45">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 = aktor, 1 = twórca(np: dziękowiec, reżyser)]]></commentInRDBMS>
+<generatorID>C06D0AE9-A2EE-BA1B-4B00-13E4AA88D81F</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AA9DD91F-6D22-E7CC-BA70-4ECDCB582EE5" referredColumn="AF1C1FEF-C8A2-BC38-9AE4-A34DCB6BA65F"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74868B88-1C3D-9148-648B-D7E731CEBA30" name="CREATOR_MOVIE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:50:10 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="58247870-9A1B-3706-2C34-40F01DD896E5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8107BBA7-6147-6469-6202-C47C2428F870" name="CREATOR_PERSON_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:50:17 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB89A287-F4B1-6C25-6A87-6263AB5AA19F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7DBAD941-19BA-1BB9-9E6F-6B59E41DCF57" name="CREATOR_CREATORMOVIE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:50:54 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92979755-8AB5-24D4-53F2-58A432DD1C45"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

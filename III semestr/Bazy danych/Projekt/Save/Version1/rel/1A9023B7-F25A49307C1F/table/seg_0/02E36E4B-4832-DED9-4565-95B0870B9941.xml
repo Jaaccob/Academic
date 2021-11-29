@@ -1,0 +1,158 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02E36E4B-4832-DED9-4565-95B0870B9941" name="AWARD">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela przechowuje informacje o nagrodach jakie uzyskał film oraz (jeśli dotyczy) dla jakiej osoby została przyznana]]></comment>
+<generatorID>217B5ACF-11E0-5A33-E039-7F7D5027835A</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>award</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idMovie" id="1C6239D7-ACD2-A2F2-DD25-2154B02DFF53">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[idMovie wskazuje na konkretny film, który otrzymał nagrodę lub otrzymał nominację]]></comment>
+<commentInRDBMS><![CDATA[idMovie wskazuje na konkretny film, który otrzymał nagrodę lub otrzymał nominację]]></commentInRDBMS>
+<generatorID>1F5F0757-FA42-5DDD-0435-19280563904E</generatorID>
+<notes><![CDATA[idMovie wskazuje na konkretny film, który otrzymał nagrodę lub otrzymał nominację]]></notes>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="61E6259B-A27F-B093-BC0A-0ABC142B3211" referredColumn="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</associations>
+</Column>
+<Column name="idPerson" id="8050D53B-0651-952F-7287-E5344A097E31">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[idPerson wskazuje na konkretną osobę, która otrzymała nagrodę lub otrzymała nominację]]></comment>
+<commentInRDBMS><![CDATA[idPerson wskazuje na konkretną osobę, która otrzymała nagrodę lub otrzymała nominację]]></commentInRDBMS>
+<generatorID>CB5674A1-777C-727C-34CE-D917ED46F9CC</generatorID>
+<notes><![CDATA[idPerson wskazuje na konkretną osobę, która otrzymała nagrodę lub otrzymała nominację]]></notes>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E622B3A6-0E46-6C39-A083-DEF1E236BF3A" referredColumn="8B95A57B-0D74-8311-76EC-B871E59A230D"/>
+</associations>
+</Column>
+<Column name="idGenre" id="47968A8D-9307-AFD6-37EB-B8E83A5300D6">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:04:57 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="39402AB4-2FB2-0183-7A32-1C691B1209F2" referredColumn="5D393D34-43CF-7912-121D-557F89B8FCC9"/>
+</associations>
+</Column>
+<Column name="date" id="AFD3E8A1-A7FB-65A5-2160-89A47B6CEB78">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Data otrzymania nominacji/nagrody]]></comment>
+<commentInRDBMS><![CDATA[Data otrzymania nominacji/nagrody]]></commentInRDBMS>
+<generatorID>A2DCAAF9-21D6-55C6-4ABC-6DFA56ECB6B4</generatorID>
+<notes><![CDATA[Data otrzymania nominacji/nagrody]]></notes>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="info" id="505CA47A-C600-CFF7-682A-6993958609CD">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[Opis nominacja/wygrana oraz jaka kategoria]]></commentInRDBMS>
+<generatorID>DB4EB141-07A6-D67E-DA64-4D2CC9F5A77D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200</dataTypeSize>
+<ownDataTypeParameters>200,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="won" id="902097D2-A388-5E4A-1668-DCA605111004">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Jeśli 0 film otrzymał nominację
+Jeśli 1 film otrzymał wygraną]]></comment>
+<commentInRDBMS><![CDATA[Jeśli 0 film otrzymał nominację
+Jeśli 1 film otrzymał wygraną]]></commentInRDBMS>
+<generatorID>7D13AD88-A336-EB18-64BC-CA7EC928B768</generatorID>
+<notes><![CDATA[Jeśli 0 film otrzymał nominację
+Jeśli 1 film otrzymał wygraną]]></notes>
+<ownerDesignName>Version1</ownerDesignName>
+<constraintComment><![CDATA[Jeżeli 0 - film otrzymał nominację do nagrody
+Jeżeli 1 - film otrzymał nagrodę i wygrał]]></constraintComment>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<listOfValues>
+<valueDef value="0" description="Nominacja"/>
+<valueDef value="1" description="Wygrana"/>
+</listOfValues>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<listOfRanges>
+<rangeDef class="oracle.dbtools.crest.model.design.constraint.AVT">
+<beginValue>0</beginValue>
+<endValue>1</endValue>
+<description>0 - Nominacja, 1 - Wygrana </description>
+</rangeDef>
+</listOfRanges>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B47C1B8F-B707-E8BC-34CD-5B7630AFBF87" name="AWARD_MOVIE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:45:42 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C6239D7-ACD2-A2F2-DD25-2154B02DFF53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7211E34F-691F-985C-7619-B8AD93F9D537" name="AWARD_PERSON_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:45:53 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8050D53B-0651-952F-7287-E5344A097E31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93AB9C8B-7962-A259-50DF-6F25920734A5" name="AWARD_AwardGenre_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:05:54 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="47968A8D-9307-AFD6-37EB-B8E83A5300D6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

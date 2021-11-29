@@ -1,0 +1,64 @@
+logowanie do vmware:
+logowanie: db2021gr5u02
+haslo : Lenovo1qazXDR%432
+
+logowanie do sql serwer
+sqlplus a51@umain12pdb1
+
+login : a51@umain12pdb1
+hasło : a51
+
+hasło do linux'a : db1!2!3!
+
+
+Zadanie 1
+show user;
+select user from dual;
+
+desc user_tables;
+desc <- pokazuje nazwY atrybutu(kolumne) typ danych oraz informacje czy atrybut ma własność not Null/Null
+
+Zadanie 2
+select table_name from user_tables;
+
+user_tables <- perspektywa
+
+Zadanie 3
+desc DEPT
+desc EMP
+desc SALGRADE
+
+Zadanie 4
+select * from user_tab_commants;
+
+Zadanie 5 
+desc user_constraints
+select constraint_name, constraint_type, r_constraint_name, table_name from user_constraints;
+
+select uc.constraint_name, constraint_type, r_constraint_name, uc.table_name, column_name from user_constraints uc, user_cons_columns ucc where uc.table_name = ucc.table_name and uc.constraint_name = ucc.constraint_name;
+
+Zadanie 6
+SELECT * FROM DEPT;
+SELECT * FROM EMP;
+SELECT * FROM SALGRADE;
+
+Zadanie 7
+SELECT job FROM EMP WHERE ename = 'ALLEN';
+
+Zadanie 8 
+SELECT ENAME FROM EMP WHERE SAL >= 1250;
+pi_{ENAME}(sigma_{sal >= 1250}(EMP))
+
+Zadanie 9 
+SELECT EMPNO, ENAME, DEPT.DNAME FROM EMP, DEPT WHERE EMP.DEPTNO = DEPT.DEPTNO AND DEPT.DEPTNO = 20;
+SELECT EMPNO, ENAME, DNAME FROM EMP NATURAL JOIN DEPT WHERE DEPTNO = 20;
+
+Zadanie 10
+SELECT EMPNO, ENAME FROM EMP WHERE COMM IS NULL OR COMM = 0;
+
+Zadanie 11
+SELECT E1.EMPNO, E1.ENAME, E2.JOB, E2.ENAME FROM EMP E1, EMP E2 WHERE E1.MGR = 7698 AND E2.EMPNO = E1.MGR;
+
+Zadanie 12
+SELECT ENAME FROM EMP WHERE ENAME LIKE 'S%';
+SELECT ENAME FROM EMP WHERE ENAME >= 'S' AND ENAME <'T';

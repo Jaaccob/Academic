@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="721B032C-FB2C-D3BE-85C5-13254C39F002" name="CREATORMOVIE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>24FC0E1A-B561-6283-1E28-FFB98E447370</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<ordsAlias>creatormove</ordsAlias>
+<abbreviation>creatorMovie</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="AF1C1FEF-C8A2-BC38-9AE4-A34DCB6BA65F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Id pracy jaka istnieje przy tworzeniu filmu]]></comment>
+<commentInRDBMS><![CDATA[Id pracy jaka istnieje przy tworzeniu filmu]]></commentInRDBMS>
+<generatorID>26183E88-36A7-E1EF-11EC-C360FB3A2BF5</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="job" id="2403F9D7-0218-CD05-EE67-5DCEFDBD4CFE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Opis pracy jaką można wykonywać przy tworzeniu filmu]]></comment>
+<commentInRDBMS><![CDATA[Opis pracy jaką można wykonywać przy tworzeniu filmu]]></commentInRDBMS>
+<generatorID>93BF19B7-94F4-7BA6-D749-41B8861DBC14</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="79DB5744-11EF-9E0D-818F-BE848A2E85FA" name="CREATORMOVIE_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 13:42:46 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF1C1FEF-C8A2-BC38-9AE4-A34DCB6BA65F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E54226F8-1480-4BBF-8764-D5FB82FED1AF" name="CREATORMOVIE__IDXv1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:21:27 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF1C1FEF-C8A2-BC38-9AE4-A34DCB6BA65F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

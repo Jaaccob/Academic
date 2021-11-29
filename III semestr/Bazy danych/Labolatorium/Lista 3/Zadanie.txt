@@ -1,0 +1,175 @@
+Zadanie 1
+
+N(R)={A,B,C,D,E,F,G,H}
+PK(R) = {A,B}
+A -> D,G
+B -> C,E
+
+N(R1) = {A,D,G}
+PK(R1) = {A}
+
+N(R2) = {A,B,F,H}
+PK(R2) = {A,B}
+
+N(R3) = {B,C,E}
+PK(R3) = {B}
+
+FK1(R2) = {A} -> PK(R1)
+FK2(R2) = {B} -> PK(R3)
+
+Zadanie 2
+
+N(S) = {A,B,C,D,E,F,G,H}
+PK(S) = {A}
+A -> B,C,E,H
+B -> F
+C -> D
+E -> G
+
+N(S1) = {B,F}
+PK(S1) = {B}
+
+N(S2) = {C,D}
+PK(S2) = {C}
+
+N(S3) = {E,G}
+PK(S3) = {E}
+
+N(S4) = {A,B,C,E,H}
+PK(S4) = {A}
+
+FK1(S4) = {B} -> PK(S1)
+FK2(S4) = {C} -> PK(S2)
+FK3(S4) = {E} -> PK(S3)
+
+Zadanie 3
+
+N(T) = {A,B,C,D,E,F,G,H,I,J,K,L}
+PK(T) = {A,B}
+A -> D,H
+B -> F
+F -> G
+I -> J
+J -> L
+
+//Druga postać normalna
+
+N(T1) = {A,D,H}
+PK(T1) = {A}
+
+N(T2) = {B,F,G}
+PK(T2) = {B}
+
+N(T3) = {A,B,C,I,J,K,L}
+PK(T3) = {A,B}
+
+//Trzecia postać normalna
+
+N(T1) = {A,D,H}
+PK(T1) = {A}
+
+N(T2.1) = {B,F}
+PK(T2.1) = {B}
+FK(T2.1) = {F} -> PK(T2.2)
+
+N(T2.2) = {F,G}
+PK(T2.2) = {F}
+
+N(T3.1) = {A,B,C,I,K}
+PK(T3.1) = {A,B}
+FK(T3.1) = {A} -> PK(T1)
+FK(T3.1) = {B} -> PK(T2.1)
+FK(T3.1) = {I} -> PK(T3.2)
+
+N(T3.2) = {I,J}
+PK(T3.2) = {I}
+FK(T3.2) = {J} -> PK(T3.3)
+
+N(T3.3) = {J,L}
+PK(T3.3) = {J}
+
+Zadanie 4
+
+N(P) = {A,B,C,D,E,F,G,H,I,J}
+PK(P) = {A,C,D}
+A -> F
+F -> G
+C -> H
+C,D -> B
+
+//Druga postać normalna
+N(P1) = {A,F,G}
+PK(P1) = {A}
+
+N(P2) = {C,H}
+PK(P2) = {C}
+
+N(P3) = {C,D,B}
+PK(P3) = {C,D}
+
+N(P4) = {A,C,D,I,J}
+PK(P4) = {A,C,D}
+
+//Trzecia postać normalna
+N(P1.1) = {A,F}
+PK(P1.1) = {A}
+FK4(P1.1) = {F} -> PK(P1.2)
+
+N(P1.2) = {F,G}
+PK(P1.2) = {F}
+
+N(P2) = {C,H}
+PK(P2) = {C}
+
+N(P3) = {C,D,B}
+PK(P3) = {C,D}
+
+N(P4) = {A,C,D,I,J}
+PK(P4) = {A,C,D}
+FK1(P4) = {A} -> PK(P1.1)
+FK2(P4) = {C} -> PK(P2)
+FK3(P4) = {C,D} -> PK(P3)
+
+Zadanie 5
+N(M) = {A,F,B,C,D,E,G,H}
+PK(M) = {A,F}
+A -> B
+B -> D
+F -> E,G
+
+//Druga postać normalna 
+N(M1) = {A,B,D}
+PK(M1) = {A}
+
+N(M2) = {F,E,G}
+PK(M2) = {F}
+
+N(M3) = {A,C,F,H}
+PK(M3) = {A,F}
+
+//Trzecia postać normalna
+N(M1.1) = {A,B}
+PK(M1.1) = {A}
+FK3(M1.1) = {B} -> PK(M1.2)
+
+N(M1.2) = {B,D}
+PK(M1.2) = {B}
+
+N(M2) = {F,E,G}
+PK(M2) = {F}
+
+N(M3) = {A,C,F,H}
+PK(M3) = {A,F}
+FK1(M3) = {A} -> PK(M1.1)
+FK2(M3) = {F} -> PK(M2)
+
+
+
+Na kolokwium 12.11.2020r.
+Różnica, dzielenie, kwadrat kartezjański, przecięcie 
+Przypomnij sobie!!! 
+
+
+
+
+

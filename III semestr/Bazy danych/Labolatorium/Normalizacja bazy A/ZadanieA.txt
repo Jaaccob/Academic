@@ -1,0 +1,122 @@
+Karta_książki = { Sygnatura, Id_biblioteki, Nazwa_biblioteki, Adres_biblioteki,Tytuł, Id_autora, Imię_autora, Drugie_imię_autora, Nazwisko_autora, ISBN, Id_wydania, Wydanie, Rok_wydania, Opis_woluminu, Id_wydawnictwa, Nazwa_wydawnictwa, Adres_wydawnictwa,Lp_wypożyczenia, Data_wypożyczenia, Wymagany_termin_zwrotu,Data_zwrotu, Nr_czytelnika, Imię_czytelnika, Nazwisko_czytelnika,Adres_zamieszkania_czytelnika,Adres_korespondencyjny_czytelnika, Email_czytelnika, Nr_tel_czytelnika, Email_biblioteki, Nr_tel_biblioteki}
+
+
+Pk(Karta_książki) = {Sygnatura, Id_biblioteki, Id_autora, Lp_wypożyczenia}
+
+II POSTAĆ NORMALNA
+//////////////////////////////
+Id_biblioteki -> Nazwa_biblioteki
+Id_biblioteki -> Adres_biblioteki
+Id_biblioteki -> Email_biblioteki
+Id_biblioteki -> Nr_tel_biblioteki
+
+N(KS1) = {Id_biblioteki, Nazwa_biblioteki, Adres_biblioteki, Email_biblioteki, Nr_tel_biblioteki}
+pk(KS1) = {Id_biblioteki}
+-----------------------------------
+Id_autora -> Imię_autora
+Id_autora -> Drugie_imię_autora
+Id_autora -> Nazwisko_autora
+
+N(KS2) = {Id_autora, Imię_autora, Drugie_imię_autora, Nazwisko_autora}
+PK(KS2) = {Id_autora}
+-----------------------------------
+{Sygnatura, Id_biblioteki} -> Id_wydania
+{Sygnatura, Id_biblioteki} -> Wydanie
+{Sygnatura, Id_biblioteki} -> Rok_wydania
+{Sygnatura, Id_biblioteki} -> Opis_woluminu
+{Sygnatura, Id_biblioteki} -> Id_wydawnictwa
+{Sygnatura, Id_biblioteki} -> Nazwa_wydawnictwa
+{Sygnatura, Id_biblioteki} -> Adres_wydawnictwa
+{Sygnatura, Id_biblioteki} -> Tytuł 
+{Sygnatura, Id_biblioteki} -> ISBN
+
+N(KS3) = {Sygnatura, Id_biblioteki, Id_wydania, Wydanie, Rok_wydania, Opis_woluminu, Id_wydawnictwa, Nazwa_wydawnictwa, Adres_wydawnictwa, Tytuł, ISBN}
+PK(KS3) = {Sygnatura, Id_biblioteki} 
+-----------------------------------
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Data_wypożyczenia
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Wymagany_termin_zwrotu
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Data_zwrotu
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Nr_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Imię_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Nazwisko_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Adres_zamieszkania_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Adres_korespondencyjny_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Email_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Nr_tel_czytelnika
+
+N(KS4) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia, Data_wypożyczenia, Wymagany_termin_zwrotu, Data_zwrotu, Nr_czytelnika, Imię_czytelnika, Nazwisko_czytelnika, Adres_zamieszkania_czytelnika, Adres_korespondencyjny_czytelnika, Email_czytelnika, Nr_tel_czytelnika}
+PK(KS4) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia}
+-----------------------------------
+N(KS5) = {Sygnatura, Id_biblioteki, Id_autora}
+PK(KS5) = {Sygnatura, Id_biblioteki, Id_autora}
+-----------------------------------
+
+III POSTAĆ NORMALNA
+//////////////////////////////
+{Id_wydania} -> Wydanie
+{Id_wydania} -> Rok_wydania
+{Id_wydania} -> Opis_woluminu
+{Id_wydania} -> Tytuł
+{Id_wydania} -> ISBN
+{Id_wydania} -> Id_wydawnictwa
+N(KS3.1) = {Id_wydania, Wydanie, Rok_wydania, Opis_woluminu, Tytuł, ISBN, Id_wydawnictwa}
+PK(KS3.1) = {Id_wydania} 
+--------------------------------
+{Id_wydawnictwa} -> Nazwa_wydawnictwa
+{Id_wydawnictwa} -> Adres_wydawnictwa
+N(KS3.2) = {Id_wydawnictwa, Nazwa_wydawnictwa, Adres_wydawnictwa}
+PK(KS3.2) = {Id_wydawnictwa}
+--------------------------------
+{Sygnatura, Id_biblioteki} -> Id_wydania 
+N(KS3.3) = {Sygnatura, Id_biblioteki, Id_wydania}
+PK(KS3.3) = {Sygnatura, Id_biblioteki}
+--------------------------------
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Nr_czytelnika
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Data_wypożyczenia
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Wymagany_termin_zwrotu
+{Sygnatura, Id_biblioteki, Lp_wypożyczenia} -> Data_zwrotu
+N(KS4.1) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia, Nr_czytelnika, Data_wypożyczenia, Wymagany_termin_zwrotu, Data_zwrotu}
+PK(KS4.1) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia}
+--------------------------------
+{Nr_czytelnika} -> Imię_czytelnika
+{Nr_czytelnika} -> Nazwisko_czytelnika
+{Nr_czytelnika} -> Adres_zamieszkania_czytelnika
+{Nr_czytelnika} -> Adres_korespondencyjny_czytelnika
+{Nr_czytelnika} -> Email_czytelnika
+{Nr_czytelnika} -> Nr_tel_czytelnika
+N(KS4.2) = {Nr_czytelnika, Imię_czytelnika, Nazwisko_czytelnika, Adres_zamieszkania_czytelnika, Adres_korespondencyjny_czytelnika, Email_czytelnika, Nr_tel_czytelnika} 
+PK(KS4.2) = {Nr_czytelnika}
+---------------------------------
+Wszystkie klucze główne
+N(KS5) = {Sygnatura, Id_biblioteki, Id_autora}
+PK(KS5) = {Sygnatura, Id_biblioteki, Id_autora}
+FK1(KS5) = {Id_autora} -> PK(KS2)
+FK2(KS5) = {Id_biblioteki} -> PK(KS1)
+FK3(KS5) = {Sygnatura, Id_biblioteki} -> PK(KS3.3)
+
+N(KS4.2) = {Nr_czytelnika, Imię_czytelnika, Nazwisko_czytelnika, Adres_zamieszkania_czytelnika, Adres_korespondencyjny_czytelnika, Email_czytelnika, Nr_tel_czytelnika} 
+PK(KS4.2) = {Nr_czytelnika}
+
+N(KS4.1) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia, Nr_czytelnika, Data_wypożyczenia, Wymagany_termin_zwrotu, Data_zwrotu}
+PK(KS4.1) = {Sygnatura, Id_biblioteki, Lp_wypożyczenia}
+FK1(KS4.1) = {Nr_czytelnika} -> PK(KS4.2)
+FK2(KS4.1) = {Id_biblioteki} -> PK(KS1)
+FK3(KS4.1) = {Sygnatura, Id_biblioteki} -> PK(KS3.3)
+
+N(KS3.3) = {Sygnatura, Id_biblioteki, Id_wydania}
+PK(KS3.3) = {Sygnatura, Id_biblioteki}
+FK1(KS3.3) = {Id_biblioteki} -> PK(KS1)
+FK2(KS3.3) = {Id_wydania} -> PK(KS3.1)
+
+N(KS3.1) = {Id_wydania, Wydanie, Rok_wydania, Opis_woluminu, Tytuł, ISBN, Id_wydawnictwa}
+PK(KS3.1) = {Id_wydania} 
+FK(KS3.1) = {Id_wydawnictwa} -> PK(KS3.2)
+
+N(KS3.2) = {Id_wydawnictwa, Nazwa_wydawnictwa, Adres_wydawnictwa}
+PK(KS3.2) = {Id_wydawnictwa}
+
+N(KS1) = {Id_biblioteki, Nazwa_biblioteki, Adres_biblioteki, Email_biblioteki, Nr_tel_biblioteki}
+PK(KS1) = {Id_biblioteki}
+
+N(KS2) = {Id_autora, Imię_autora, Drugie_imię_autora, Nazwisko_autora}
+PK(KS2) = {Id_autora}

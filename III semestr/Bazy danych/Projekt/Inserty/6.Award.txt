@@ -1,0 +1,69 @@
+--Przyplyw wiary
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'15',TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar - "Im Standing with You", wyk. Chrissy Metz','0');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'15',TO_DATE('01/01/2020','dd/mm/yyyy'),'CriticsChoice - "Im Standing with You", wyk. Chrissy Metz','0');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('1',Null,'25',TO_DATE('01/01/2019','dd/mm/yyyy'),'Teen Choice','0');
+
+--Platforma
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+('2',Null,'11',TO_DATE('01/01/2020','dd/mm/yyyy'),'Europejska Nagroda Filmowa (od 1997) ','1');
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,Null,11,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya - Mario Campoy i Iñaki Madariaga',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,43,2,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,44,27,TO_DATE('01/01/2020','dd/mm/yyyy'),'Goya',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(2,44,0,TO_DATE('01/01/2020','dd/mm/yyyy'),'Nagroda Publiczności - w sekcji "Szaleństwo Północy" ("Midnight Madness")',1);
+
+--ROCKETMAN
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,15,TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar - "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,31,5,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,15,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob - "(I’m Gonna) Love Me Again", wyk. Elton John i Taron Egerton',1);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(3,NULL,27,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',0);
+
+--RICHARD JEWELL
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(4,24,7,TO_DATE('01/01/2020','dd/mm/yyyy'),'Oscar',0);
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(4,24,7,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złoty Glob',0);
+
+--IO
+INSERT INTO AWARD
+(IDMOVIE,IDPERSON,IDGENRE,"date",INFO,WON)
+VALUES
+(7,NULL,13,TO_DATE('01/01/2020','dd/mm/yyyy'),'Złota Szpula',0);

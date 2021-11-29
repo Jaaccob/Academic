@@ -1,0 +1,13 @@
+drop table award CASCADE CONSTRAINTS;
+drop table awardgenre CASCADE CONSTRAINTS;
+drop table "COMMENT" CASCADE CONSTRAINTS;
+drop table commentmovie CASCADE CONSTRAINTS;
+drop table creator CASCADE CONSTRAINTS;
+drop table creatormovie CASCADE CONSTRAINTS;
+drop table frienduser CASCADE CONSTRAINTS;
+drop table genre CASCADE CONSTRAINTS;
+drop table movie CASCADE CONSTRAINTS;
+drop table moviegenre CASCADE CONSTRAINTS;
+drop table person CASCADE CONSTRAINTS;
+drop table "USER" CASCADE CONSTRAINTS;
+drop table userlog CASCADE CONSTRAINTS;

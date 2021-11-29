@@ -1,0 +1,77 @@
+--Wyświetlenie całej aktywności użytkowników 
+SELECT
+    IDUSER,
+    (SELECT COUNT(*) from USERLOG WHERE "date" BETWEEN TO_DATE('01/01/2020','DD/MM/YYYY') and to_date('01/01/2021','DD/MM/YYYY') AND IDUSER = userlog.user_iduser ) "W 2020 ROKU",
+    (SELECT COUNT(*) from USERLOG WHERE "date" BETWEEN TO_DATE('01/01/2021','DD/MM/YYYY') and to_date('01/01/2022','DD/MM/YYYY') AND IDUSER = userlog.user_iduser ) "W 2021 ROKU" 
+FROM 
+    USERLOG,"USER" 
+WHERE
+    USERLOG.USER_IDUSER = "USER".IDUSER
+GROUP BY 
+    IDUSER;
+
+--Wybór konkretnego użytkownika i wyświetlenie jego wszystkich komentarzy
+SELECT
+    "USER"."NAME",
+    MOVIE.TITLE,
+    "COMMENT"."DESCRIPTION"
+FROM
+    "COMMENT",COMMENTMOVIE,MOVIE,"USER"
+WHERE
+    "USER".IDUSER = COMMENTMOVIE.USER_IDUSER
+AND
+    "COMMENT"."ID" = COMMENTMOVIE.COMMENT_ID
+AND
+    MOVIE."ID" = commentmovie.movie_id
+AND
+    UPPER("USER"."NAME") = UPPER('&SELECTED_NAME');
+
+--wYŚWIETL Osoby KTÓRe otrzymały nagrodę
+SELECT
+    PERSON."NAME",
+    MOVIE.TITLE,
+    AWARD.INFO
+FROM
+    AWARD,CREATOR,CREATORMOVIE,MOVIE,PERSON
+WHERE
+    AWARD.IDMOVIE = MOVIE."ID"
+AND
+    AWARD.IDPERSON = PERSON."ID"
+AND
+    creator.person_id = PERSON."ID"
+AND
+    creator.creatormovie_id = CREATORMOVIE."ID"
+AND
+    UPPER(CREATORMOVIE."JOB") = UPPER('&SELECT_JOB')
+AND
+    AWARD.IDPERSON IS NOT NULL;
+
+SELECT
+    COUNT(*)
+FROM
+    MOVIE,COMMENTMOVIE
+WHERE
+    MOVIE."ID" = COMMENTMOVIE.MOVIE_ID
+AND
+    UPPER(MOVIE.TITLE) = UPPER('&SELECT_TITLE');
+
+
+
+
+
+--
+
+
+CREATE OR REPLACE VIEW Movie_Genre as(
+SELECT 
+    MOVIE.TITLE "Tytul",
+    MOVIE."DESCRIPTION" "Opis",
+    MOVIE."MARK" "Ocena",
+    GENRE.GENRE "Gatunek"
+FROM
+    MOVIE,GENRE,MOVIEGENRE
+WHERE
+    MOVIEGENRE.MOVIE_ID = MOVIE."ID"
+AND
+    MOVIEGENRE.GENRE_ID = GENRE."ID");
+

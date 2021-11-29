@@ -1,0 +1,30 @@
+Tabela "Award" ma przechowywać informacje o nagrodach jakie otrzymał dany film oraz dla kogo została przyznana
+Tabela łączy się z "Move" -> idMove - Id oraz "Person" -> idPerson - Id
+
+Tabela "Comment" ma przechowywać informacje o komentarzach zostawionych przez użytkowników 
+
+-Dopracuj mark
+
+Tabela "CommentMove" ma zawierać połączenia między komentarzami, użytkownikami, a filmami
+Tabela łączy się z "CommentMove" -> Id - idMove 
+
+Tabela "Creator" ma przechowywać informacje o osobach odpowiedzialnych za produkcje/aktorstwo/wyprodukowanie filmu 
+Tabela łączy się z "Move" -> Id - idMove oraz "Person" -> idPerson - Id
+
+
+Tabela osobna "CreatorMove"
+
+Tabela "FriendUser" ma przechowywać informacje o osobach oberwowanych przez użytkownika
+Tabela łączy się z "User" -> Id - idUser oraz -> idFriend - Id
+
+Tabela "Move" ma przechowywać informacje o filmach
+
+- Osobna tabela dla gatunków
+
+Tabela "Person" ma przechowywać informacje o twórcach oraz aktorach
+
+Tabela "User" ma przechowywać informacje o użytkownikach 
+
+Tabela "UserLog" ma przechowywać informacje o logowaniu się do filmoteki
+Tabela łączy sie z "User" -> idUser - Id
+

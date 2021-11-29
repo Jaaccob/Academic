@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7A1042D2-83D4-4112-9475-0A466B461430" name="USER">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela "USER" przechowuje informacje o zarejestrowanych użytkownikach]]></comment>
+<generatorID>CB5A20B3-7D65-F35B-DECB-E22626C5240E</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>user</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="idUser" id="B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[IdUser wskazujące jednoznacznie na konkretnego użytkownika aplikacji]]></comment>
+<commentInRDBMS><![CDATA[IdUser wskazujące jednoznacznie na konkretnego użytkownika aplikacji]]></commentInRDBMS>
+<generatorID>A1FFF4E4-52E8-4B04-F717-0B1B80C0F30D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="359ECC74-5C23-E86A-86B2-437F5719A2C0">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Nazwa wybrana przez użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Nazwa wybrana przez użytkownika]]></commentInRDBMS>
+<generatorID>1FFC68C9-0EB3-3B52-8E0F-7AC64F55B8E4</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="64C455EC-7EFE-8276-50A9-D5E60F98B47A">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>D3DACB65-4E4A-B7D3-4D7D-77D4DE44B15B</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="age" id="4C40C06A-91FD-8FAC-329B-F707CDF731A1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>6EC88AFC-32A0-125B-09E7-D66649C9F05D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sex" id="73F493C3-13F7-CD0A-D5C6-C805A4937A4F">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<commentInRDBMS><![CDATA[0 = mężczyzna a 1 = kobieta]]></commentInRDBMS>
+<generatorID>84572B1E-A1F1-672B-97B5-5F8923573700</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<listOfValues>
+<valueDef value="0" description="Mężczyzna"/>
+<valueDef value="1" description="Kobieta"/>
+</listOfValues>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="password" id="18FD404B-E11B-21D4-B84C-008C06777496">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>9DF3662E-63C9-98E4-C0BC-BC987637DF68</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6BAB7993-A893-92BA-1329-7B2E3AE8F30E" name="USER_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:42:39 UTC</createdTime>
+<generatorID>4A4B9480-01DB-F657-6299-0096EDDE7D36</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="377C33F5-67D7-91B0-295C-C2A026FD1F9B" name="USER__IDXv1">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:22:53 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

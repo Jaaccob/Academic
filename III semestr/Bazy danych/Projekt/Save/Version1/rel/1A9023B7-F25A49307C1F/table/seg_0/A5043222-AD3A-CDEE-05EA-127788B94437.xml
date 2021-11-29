@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A5043222-AD3A-CDEE-05EA-127788B94437" name="GENRE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 17:11:41 UTC</createdTime>
+<generatorID>D717CAC0-A9E7-95F5-49C6-F2B05EE70E44</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="E349FE76-C104-A832-DB37-CF5601188C9B">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 17:11:41 UTC</createdTime>
+<comment><![CDATA[Id generuje się automatycznie przez wyzwalacz]]></comment>
+<commentInRDBMS><![CDATA[Id generuje się automatycznie przez wyzwalacz]]></commentInRDBMS>
+<generatorID>9DA0DCB6-31ED-2AA1-897A-84FCDC12124D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,11,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genre" id="18A3392D-4529-FFFE-6D17-37F63CC98C09">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 17:11:41 UTC</createdTime>
+<comment><![CDATA[Opis gatunku filmu np akcji, fantastyczny itp.]]></comment>
+<commentInRDBMS><![CDATA[Opis gatunku filmu np akcji, fantastyczny itp.]]></commentInRDBMS>
+<generatorID>A89583AD-DBCF-E021-6720-F74B3D8B8122</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C839E9C2-8165-83EF-D3B6-FF1C81387369" name="GENRE_PK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 17:11:54 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E349FE76-C104-A832-DB37-CF5601188C9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E95DA03B-CDF8-BD58-81C2-C222FBAF8B48" name="GENRE__IDX">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 16:57:33 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E349FE76-C104-A832-DB37-CF5601188C9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

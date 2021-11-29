@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="MOVEGENRE_MOVIE_FK" directorySegmentName="seg_0" id="33A66DF1-6998-77EB-CD6C-950F14BBC96E">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 17:02:05 UTC</createdTime>
+<generatorID>3B9DD1E3-AF59-DC47-DC9E-371573C1B315</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<engineerTo>
+<item key="1A9023B7-068C-201C-D876-F25A49307C1F" value="true"/>
+</engineerTo>
+<sourcePk>8156A982-E57A-CE0C-A556-A27B1C1319FF</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>83E2E355-1853-2DAD-C3C9-3F0C98C3623C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2C04FADF-7B1D-94BC-D4C6-9D3CC5B8005B</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

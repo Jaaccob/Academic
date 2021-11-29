@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A6CA575C-95B8-CCFD-B981-38EC5B7AB6F0" name="USERLOG">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Tabela "USERLOG" przechowuje informacje o czasie logowania użytkownika do aplikacji. Tabela głównie do przechowywania statystyk]]></comment>
+<generatorID>719958C5-3488-0C1E-6DBF-088A2EC8E65D</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<abbreviation>userlog</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="USER_idUser" id="BA1F3926-231A-C0FD-1DFE-B69F1B8EC666">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[IdUser wskazujący na użytkownika. Wszystkie logowania będą zapisywane w tej tabeli]]></comment>
+<commentInRDBMS><![CDATA[IdUser wskazujący na użytkownika. Wszystkie logowania będą zapisywane w tej tabeli]]></commentInRDBMS>
+<generatorID>E0F471EB-B6EE-47FC-8DDD-9808373AA1B6</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="935E34AA-47C3-7E82-39E8-643CAF95B8BA" referredColumn="B6463AD6-D75C-5C0E-3F0F-2B5E38DAA7C5"/>
+</associations>
+</Column>
+<Column name="date" id="D8F5BE56-83B8-BAC1-EBE1-9A985E721F78">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[Data logowania użytkownika]]></comment>
+<commentInRDBMS><![CDATA[Data logowania użytkownika]]></commentInRDBMS>
+<generatorID>8A72A127-67E9-ABE2-30F5-DD2E8FE442E9</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="B9AC1000-86E6-EF17-BADB-67F25F308396" name="USERLOG__IDX">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-22 13:19:56 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA1F3926-231A-C0FD-1DFE-B69F1B8EC666"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="95A5ED06-30FD-9518-DA62-B8034E49C7CD" name="USERLOG_USER_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-21 12:01:31 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BA1F3926-231A-C0FD-1DFE-B69F1B8EC666"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

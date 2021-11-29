@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8C53B7F-CCF1-9142-3160-3A563190A5EB" name="MOVIEGENRE">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<generatorID>0476C35C-30D3-8F29-305E-6C5E15AB3176</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<ordsAlias>movegenre</ordsAlias>
+<abbreviation>movieGenre</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MOVIE_id" id="211CDF24-E8ED-5004-5630-1074B33918FF">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[IdMovie wskazuje na konkretny film]]></comment>
+<commentInRDBMS><![CDATA[IdMovie wskazuje na konkretny film]]></commentInRDBMS>
+<generatorID>3139F2F4-DD9C-85F7-72B1-2E1FAA6DC3A4</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementStartWith>0</autoIncrementStartWith>
+<autoIncrementMinValue>0</autoIncrementMinValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3B9DD1E3-AF59-DC47-DC9E-371573C1B315" referredColumn="1AC09832-AF2A-4015-9458-EA8467732613"/>
+</associations>
+</Column>
+<Column name="GENRE_id" id="94464A62-AAB5-F7CA-7728-20981A98CE00">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-17 16:27:39 UTC</createdTime>
+<comment><![CDATA[IdGenre wskazuje na konkretny gatunek. Jeden film może mieć wiele gatunków]]></comment>
+<commentInRDBMS><![CDATA[IdGenre wskazuje na konkretny gatunek. Jeden film może mieć wiele gatunków]]></commentInRDBMS>
+<generatorID>1A2D19E7-D665-CEE8-A23D-709EC34F53D2</generatorID>
+<ownerDesignName>Version1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>11</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DC0F38AE-665B-12A9-E6DC-DBADB254F0E2" referredColumn="E349FE76-C104-A832-DB37-CF5601188C9B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DD1D32B3-76C9-F7AD-02D0-E703E1FCE05C" name="MOVEGENRE_MOVIE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 16:49:16 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="211CDF24-E8ED-5004-5630-1074B33918FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F57374D4-4D69-CACA-BEAB-B8265299C3F5" name="MOVEGENRE_GENRE_FK">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-20 17:12:35 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="94464A62-AAB5-F7CA-7728-20981A98CE00"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

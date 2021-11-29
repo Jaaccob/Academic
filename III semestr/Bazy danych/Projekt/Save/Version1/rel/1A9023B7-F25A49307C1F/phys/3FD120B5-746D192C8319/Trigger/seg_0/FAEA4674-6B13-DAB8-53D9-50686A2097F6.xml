@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="Trigger_for_MoveGenre" directorySegmentName="seg_0" id="FAEA4674-6B13-DAB8-53D9-50686A2097F6">
+<createdBy>Jacob</createdBy>
+<createdTime>2021-01-18 17:16:24 UTC</createdTime>
+<ownerDesignName>Version1</ownerDesignName>
+<actions>INSERT</actions>
+<body><![CDATA[CREATE TRIGGER TRIGGER_MOVIEGENRE
+BEFORE INSERT ON MOVIEGENRE
+FOR EACH ROW
+BEGIN
+SELECT Sequence_for_MovieGenre.NEXTVAL
+INTO :NEW.idGenre
+FROM DUAL;
+END;
+/]]></body>
+<triggerTime>AFTER</triggerTime>
+<owner>MDSYS</owner>
+<state>ENABLE</state>
+<table>D8C53B7F-CCF1-9142-3160-3A563190A5EB</table>
+</TriggerOraclev10g>
